@@ -129,6 +129,15 @@ a:visited {
 	float: left;
 }
 
+/*#header .logo-no {
+	text-indent: -1000px;
+	width: 230px;
+	height: 133px;
+	float: left;
+	background: none;
+	text-align: left;
+}*/
+
 #header .logo h1 {
 	background: none;
 }
