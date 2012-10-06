@@ -148,12 +148,14 @@ a:visited {
 
 #header .menu {
 	float: right;
-	width: 70px;
 	font-size: 14px;
+	height: 10px;
 }
 
 #header .menu ul li {
 	margin-bottom: 3px;
+	float: left;
+	padding: 0 10px 0 10px;
 }
 
 #header .menu ul li a {
