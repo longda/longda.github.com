@@ -1,0 +1,129 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+
+::selection { 
+  background: #fe57a1; 
+  color: #fff; 
+  text-shadow: none; 
+}
+
+
+body {
+  background-color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  text-align: left;
+  color: #4a4236;
+}
+
+a {
+  color: #fe57a1;
+  text-decoration: underline;
+  outline: none;
+}
+
+a:hover {
+  color: #454e55;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fe57a1;
+}
+
+a:visited:hover {
+  color: ##a6a8ab; 
+}
+
+a:visited:hover:after {
+  background-color: #454e55; 
+}
+
+a img {
+  border: 0;
+}
+
+
+.page-title h1 {
+  color: #2c251d;
+  font-size: 2.1em;
+  font-weight: 700;
+}
+
+.list-none li {
+  list-style-type: none !important;
+  margin-left: 0 !important;
+}
+
+
+#site {
+  line-height: 1.65;
+  min-height: 500px;
+  font-size: 110%;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto 0;
+}
+
+#page-content section, #page-content .page-title  {
+  width: 40.4em;
+  margin: 15px auto;
+}
+
+#masthead {
+  margin: 0 auto;
+  padding: 25px 0;
+  border-bottom: 7px solid #eee;
+  color: #57626b;
+  width: 43.75em;
+}
+
+#masthead h1 {
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+  font-size: 1.1em;
+}
+
+#masthead #home {
+  margin: 0;
+  float: left;
+}
+
+#masthead h1 a {
+  font-size: 0.8em;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #454e55;
+  text-decoration: none; !important
+}
+
+#main-nav {
+  float: right;
+}
+
+#main-nav li {
+  display: inline-block;
+  margin-right: 1.7em;
+}
+
+#main-nav li a {
+  color: #a6a8ab;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none; !important
+}
+
+#main-nav li a.selected, #main-nav li a:hover {
+  color: #fe57a1;
+}
