@@ -51,6 +51,13 @@ a img {
 }
 
 
+@media only screen and (max-width: 30em) {
+  #post {
+    font-size: 1.7em;
+  }
+}
+
+
 .page-title h1 {
   color: #2c251d;
   font-size: 2.1em;
@@ -75,7 +82,7 @@ a img {
 }
 
 #page-content section, #page-content .page-title  {
-  width: 40.4em;
+  width: 40.0em;
   margin: 15px auto;
 }
 
@@ -105,7 +112,7 @@ a img {
   cursor: pointer;
   font-size: 1.2em;
   color: #454e55;
-  text-decoration: none; !important
+  text-decoration: none !important;
 }
 
 #main-nav {
@@ -127,3 +134,4 @@ a img {
 #main-nav li a.selected, #main-nav li a:hover {
   color: #fe57a1;
 }
+
