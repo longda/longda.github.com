@@ -253,6 +253,16 @@ a img {
   margin-bottom: 1.5em;
 }
 
+@media only screen and (min-width: 40em) {
+  #page-content section {
+    width: 27.625em;
+  }
+
+  #page-content .page-title  {
+    width: 41.5em;
+  }
+}
+
 @media only screen and (min-width: 64.063em) {
   #page-content section {
     width: 26.625em;
