@@ -274,3 +274,32 @@ a img {
 }
 
 
+/* FOOTER */
+
+#footsie {
+  border-top: 7px solid #eee;
+  color: #B6B7B8;
+  text-align: center;
+  margin: 5px auto 5px auto;
+  width: 92%;
+}
+
+@media only screen and (min-width: 40em) {
+  #footsie {
+    width: 41.5em;
+  }
+}
+
+@media only screen and (min-width: 64.063em) {
+  #footsie {
+    width: 40em;
+  }
+}
+
+.foot {
+  margin: 5px 0 5px 0;
+}
+
+#footsie .copy {
+  font-size: 0.75em;
+}
