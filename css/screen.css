@@ -87,6 +87,56 @@ a img {
   margin-left: 0 !important;
 }
 
+h2 {
+  color: #2c251d;
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 92%;
+}
+
+h3 {
+  color: #2c251d;
+  font-size: 1.375em;
+  font-weight: bold;
+  margin: 15px 0px;
+  width: 92%;
+}
+
+h4 {
+  color: #2c251d;
+  font-size: 1.250em;
+  font-weight: bold;
+  margin: 15px 0px;
+  width: 92%;
+}
+
+h5 {
+  color: #2c251d;
+  font-size: 1.125em;
+  font-weight: bold;
+  margin: 15px 0px;
+  width: 92%;
+}
+
+h6 {
+  color: #4a4236;
+  font-size: 0.938em;
+  font-weight: bold;
+  margin: 15px 0px;
+}
+
+@media only screen and (min-width: 40em) {
+  h2 {
+    width: 41.5em;
+  }
+}
+
+@media only screen and (min-width: 64.063em) {
+  h2 {
+    width: 40em;
+  }
+}
+
 
 /* MQ BAR */
 /*
@@ -115,6 +165,7 @@ a img {
 */
 
 
+/* LAYOUT LEVEL */
 /* TOP NAV */
 
 .top-nav {
@@ -258,7 +309,7 @@ a img {
     width: 27.625em;
   }
 
-  #page-content .page-title  {
+  #page-content .page-title {
     width: 41.5em;
   }
 }
@@ -268,7 +319,7 @@ a img {
     width: 26.625em;
   }
 
-  #page-content .page-title  {
+  #page-content .page-title {
     width: 40em;
   }
 }
@@ -302,4 +353,95 @@ a img {
 
 #footsie .copy {
   font-size: 0.75em;
+}
+
+
+/* CONTENT LEVEL ELEMENTS */
+.bar-graph-label {
+  display: block;
+  margin-bottom: 5px;
+  margin-right: 15px;
+  /*width: 50%;*/
+}
+
+.bar-graph {
+  background: #fe57a1;
+  color: #ffffff;
+  display: inline-block;
+  margin-bottom: 0.5em;
+  padding-right: 15px;
+  text-align: right;
+}
+
+.bar-graph-10 {
+  width: 95%;
+}
+
+.bar-graph-9 {
+  width: 90%;
+}
+
+.bar-graph-8 {
+  width: 85%;
+}
+
+.bar-graph-7 {
+  width: 80%;
+}
+
+.bar-graph-6 {
+  width: 75%;
+}
+
+.bar-graph-5 {
+  width: 70%;
+}
+
+.bar-graph-4 {
+  width: 65%;
+}
+
+@media only screen and (min-width: 40em) {
+
+}
+
+@media only screen and (min-width: 64.063em) {
+  .bar-graph-label {
+    display: block;
+    width: inherit;
+  }
+
+  .bar-graph {
+    display: inline-block;
+    padding-right: 15px;
+    text-align: right;
+  }
+
+  .bar-graph-10 {
+    width: 65%;
+  }
+
+  .bar-graph-9 {
+    width: 60%;
+  }
+
+  .bar-graph-8 {
+    width: 55%;
+  }
+
+  .bar-graph-7 {
+    width: 50%;
+  }
+
+  .bar-graph-6 {
+    width: 45%;
+  }
+
+  .bar-graph-5 {
+    width: 40%;
+  }
+
+  .bar-graph-4 {
+    width: 35%;
+  }
 }
