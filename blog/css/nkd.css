@@ -1,3 +1,6 @@
+/*
+  Many styles lovingly borrowed from: http://nkd.cc/css/i.css
+*/
 /* ==========================================================================
    VARIABLES
 
@@ -353,6 +356,159 @@ table {
   I use different grid systems depending on my needs, so nkd doesn't assume
   anything here.
 */
+.m-0 {
+  margin: 0; }
+
+.mr-0 {
+  margin-right: 0; }
+
+.ml-0 {
+  margin-left: 0; }
+
+.mt-0 {
+  margin-top: 0; }
+
+.mb-0 {
+  margin-bottom: 0; }
+
+.p-0 {
+  padding: 0; }
+
+.pr-0 {
+  padding-right: 0; }
+
+.pl-0 {
+  padding-left: 0; }
+
+.pt-0 {
+  padding-top: 0; }
+
+.pb-0 {
+  padding-bottom: 0; }
+
+.m-1 {
+  margin: 10px; }
+
+.mr-1 {
+  margin-right: 10px; }
+
+.ml-1 {
+  margin-left: 10px; }
+
+.mt-1 {
+  margin-top: 10px; }
+
+.mb-1 {
+  margin-bottom: 10px; }
+
+.m-2 {
+  margin: 20px; }
+
+.mr-2 {
+  margin-right: 20px; }
+
+.ml-2 {
+  margin-left: 20px; }
+
+.mt-2 {
+  margin-top: 20px; }
+
+.mb-2 {
+  margin-bottom: 20px; }
+
+.m-4 {
+  margin: 40px; }
+
+.mr-4 {
+  margin-right: 40px; }
+
+.ml-4 {
+  margin-left: 40px; }
+
+.mt-4 {
+  margin-top: 40px; }
+
+.mb-4 {
+  margin-bottom: 40px; }
+
+.p-1 {
+  padding: 10px; }
+
+.pr-1 {
+  padding-right: 10px; }
+
+.pl-1 {
+  padding-left: 10px; }
+
+.pt-1 {
+  padding-top: 10px; }
+
+.pb-1 {
+  padding-bottom: 10px; }
+
+.p-2 {
+  padding: 20px; }
+
+.pr-2 {
+  padding-right: 20px; }
+
+.pl-2 {
+  padding-left: 20px; }
+
+.pt-2 {
+  padding-top: 20px; }
+
+.pb-2 {
+  padding-bottom: 20px; }
+
+.p-4 {
+  padding: 40px; }
+
+.pr-4 {
+  padding-right: 40px; }
+
+.pl-4 {
+  padding-left: 40px; }
+
+.pt-4 {
+  padding-top: 40px; }
+
+.pb-4 {
+  padding-bottom: 40px; }
+
+.p-6 {
+  padding: 60px; }
+
+.pr-6 {
+  padding-right: 60px; }
+
+.pl-6 {
+  padding-left: 60px; }
+
+.pt-6 {
+  padding-top: 60px; }
+
+.pb-6 {
+  padding-bottom: 60px; }
+
+.p-8 {
+  padding: 80px; }
+
+.pr-8 {
+  padding-right: 80px; }
+
+.pl-8 {
+  padding-left: 80px; }
+
+.pt-8 {
+  padding-top: 80px; }
+
+.pb-8 {
+  padding-bottom: 80px; }
+
+.h-100 {
+  height: 100%; }
+
 /* ==========================================================================
    TYPE
 
@@ -361,11 +517,28 @@ table {
    - Copy
 
    ========================================================================== */
+/*.serif      { font-family: georgia, serif; }
+.sans-serif {
+  font-family:
+    Avenir, "Avenir Next",
+    Helvetica,
+    Arial,
+    sans-serif;
+}*/
+body {
+  font-family: 'Lato', helvetica, arial, sans-serif; }
+
 .serif {
-  font-family: georgia, serif; }
+  font-family: 'Josefin Slab', georgia, serif; }
 
 .sans-serif {
-  font-family: Avenir, "Avenir Next", Helvetica, Arial, sans-serif; }
+  font-family: 'Lato', helvetica, arial, sans-serif; }
+
+h1 {
+  font-family: 'Orbitron', helvetica, arial, sans-serif; }
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Lato', helvetica, arial, sans-serif; }
 
 /* Headers
    ========================================================================== */
@@ -387,6 +560,13 @@ table {
 .h6 {
   font-size: 12px; }
 
+.mega {
+  font-size: 110px; }
+
+.bold-italic {
+  font-style: italic;
+  font-weight: 900; }
+
 /* Copy
    ========================================================================== */
 .intro {
@@ -394,6 +574,16 @@ table {
 
 .copy {
   font-size: 20px; }
+
+p {
+  font-size: 20px;
+  line-height: 1.5; }
+
+.caps {
+  text-transform: uppercase; }
+
+.ct {
+  text-align: center; }
 
 /* Casing
    ========================================================================== */
@@ -406,7 +596,7 @@ table {
 /* Tracking
    ========================================================================== */
 .title {
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-transform: uppercase; }
 
 /* Alignment
@@ -446,3 +636,33 @@ table {
  * Add your site styles here. Break things out to additional partials if you'd like
  * and add them in import.scss
  */
+body, html {
+  height: 100%;
+  position: relative;
+  font-size: 20px;
+  margin: 0;
+  padding: 0; }
+
+.bg-dk {
+  background: #111;
+  color: #f3f3f3; }
+
+.shade {
+  background: rgba(0, 0, 0, 0.3); }
+
+.banner-img {
+  background: url(//nkd.cc/images/banner.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+.column {
+  max-width: 640px;
+  margin: 0 auto; }
+
+@media screen and (min-width: 1024px) {
+  .mega {
+    font-size: 256px; }
+  .h3 {
+    font-size: 48px; } }
+
+/* nkd.scss bottom 2015.01.06-15.57.33 */

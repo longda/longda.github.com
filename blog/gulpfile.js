@@ -80,7 +80,7 @@ gulp.task('csslint', function(){
 gulp.task('pre-process', function(){
   gulp.src('./_sass/nkd.scss')
       .pipe(watch(function(files) {
-        return files.pipe(sass())
+        return files.pipe(sass()).on('error', errorHandler)
           .pipe(size({gzip: false, showFiles: true, title:'without vendor prefixes'}))
           .pipe(size({gzip: true, showFiles: true, title:'without vendor prefixes'}))
           .pipe(prefix())
@@ -109,7 +109,7 @@ gulp.task('jekyll-build', function (done) {
 
 // Watch & Build the Jekyll Site
 gulp.task('jekyll-watch', function (done) {
-    return cp.spawn('jekyll', ['build', '--watch'], {stdio: 'inherit'})
+    return cp.spawn('jekyll', ['build', '--watch', '--force_polling'], {stdio: 'inherit'})
         .on('close', done);
 });
 
@@ -119,6 +119,10 @@ gulp.task('jekyll-serve', function (done) {
         .on('close', done);
 });
 
+// gulp.task('jekyll', function(done) {
+//   return cp.spawn('bundle', ['exec', 'jekyll', 'build', '-q'])
+// })
+
 /*
    DEFAULT TASK
 
@@ -127,6 +131,14 @@ gulp.task('jekyll-serve', function (done) {
  • Reloads browsers when you change html or sass files
 
 */
+gulp.task('default', ['pre-process', 'minify-css'], function(){
+  gulp.start('pre-process', 'csslint');
+  gulp.watch(['_includes/*', '_layouts/*', '_posts/*', '_resources/*', '_sass/*', '*.html', '_*config.yml'], ['jekyll-build']);
+  gulp.watch('_sass/*.scss', ['pre-process', 'minify-css']);
+  gulp.watch('css/nkd.css', ['minify-css']);
+});
+
+/* ORIGINAL
 gulp.task('default', ['pre-process', 'minify-css', 'bs-reload', 'browser-sync'], function(){
   gulp.start('pre-process', 'csslint');
   gulp.watch(['_includes/*', '_layouts/*', '_posts/*', '_resources/*', '_sass/*', '*.html', '_*config.yml'], ['jekyll-build']);
@@ -134,3 +146,11 @@ gulp.task('default', ['pre-process', 'minify-css', 'bs-reload', 'browser-sync'],
   gulp.watch('css/nkd.css', ['bs-reload', 'minify-css']);
   gulp.watch('*.html', ['bs-reload'])
 });
+*/
+
+// Handle errors
+// http://stackoverflow.com/questions/24011349/gulp-error-events-js72
+function errorHandler (error) {
+  console.log(error.toString());
+  this.emit('end');
+}

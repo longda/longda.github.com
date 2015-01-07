@@ -6,3 +6,30 @@
  * Add your site styles here. Break things out to additional partials if you'd like
  * and add them in import.scss
  */
+
+body, html {
+  height: 100%;
+  position: relative;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-dk {
+  background: #111;
+  color: #f3f3f3;
+}
+
+.shade {
+  background: rgba(0,0,0,0.3);
+}
+
+.banner-img {
+  background: url(//nkd.cc/images/banner.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.column {
+  max-width: 640px;
+  margin: 0 auto;
+}

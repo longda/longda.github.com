@@ -2,18 +2,41 @@
 layout: default
 ---
 
+<header class="bg-dk banner-img">
+  <div class="h-100 pr-1 pl-1 pb-4 shade">
+    <h1 class="m-0 ct mega bold-italic lh-copy">nasa</h1>
+    <h2 class="h5 ct caps title lh-copy">It suddenly struck me that that tiny pea, pretty and blue, was the Earth.</h2>
+  </div>
+</header>
 <main>
-  <h1>Hello World</h1>
+  <div class="pl-2 pr-2 column pt-6">
+    <h1 class="ct h3 mb-4 pb-2 ss title">Houston</h1>
+    <h2 class="h4 caps">Tranquillity Base here</h2>
+    <p class="pb-4">
+      For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.
+    </p>
+
+    <h1>An H1</h1>
+    <h2>An H2</h2>
+    <h3>An H3</h3>
+    <h4>An H4</h4>
+    <h5>An H5</h5>
+    <h6>An H6</h6>
+
+    <h1>Hola Mundo</h1>
+
+    {% if site.posts %}
+      <ul>
+        {% for post in site.posts %}
+          <li>
+            <a href="{{ post.url }}" title="{{post.title}}">
+              {{ post.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
 </main>
 
-{% if site.posts %}
-  <ul>
-    {% for post in site.posts %}
-      <li>
-        <a href="{{ post.url }}" title="{{post.title}}">
-          {{ post.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endif %}
+
