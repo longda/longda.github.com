@@ -1,11 +1,47 @@
 {
   "name": "longda-github-io",
+  "description": "A github + jekyll site.",
   "private": true,
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/longda/longda.github.io.git"
+  },
+  "bugs": {
+    "url": "http://github.com/longda/longda.github.io/issues",
+    "email": "hi@longda.github.io"
+  },
+  "homepage": "http://longda.github.io",
+  "keywords": [
+    "jekyll"
+  ],
   "devDependencies": {
+    "browser-sync": "^1.1.1",
+    "gulp": "~3.5.5",
+    "gulp-autoprefixer": "0.0.5",
+    "gulp-csslint": "~0.1.3",
+    "gulp-imagemin": "~0.1.4",
+    "gulp-minify-css": "~0.3.5",
+    "gulp-rename": "^1.2.0",
+    "gulp-rimraf": "^0.1.0",
+    "gulp-sass": "~0.7.2",
+    "gulp-shell": "^0.2.9",
+    "gulp-size": "^0.4.0",
+    "gulp-svgmin": "~0.4.1",
+    "gulp-util": "~2.2.12",
+    "gulp-watch": "^0.6.8",
+    "imagemin-pngcrush": "^1.0.0",
+    "jshint-stylish": "~0.1.5",
     "grunt": "^0.4.5",
     "grunt-contrib-connect": "^0.9.0",
     "grunt-contrib-uglify": "^0.5.0",
     "grunt-contrib-watch": "^0.6.1"
+  },
+  "contributors": [
+    { "name": "David Long", "email": "hi@longda.github.io" }
+  ],
+  "license": "?",
+  "scripts": {
+    "start": "gulp"
   }
 }
