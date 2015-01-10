@@ -55,7 +55,7 @@ document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/
 				break;
 			}
 		});
-		u.initPlugin(jQuery("#unityPlayer")[0], "https://github.com/longda/static/raw/master/unity3d/survival-shooter/ss.unity3d");
+		u.initPlugin(jQuery("#unityPlayer")[0], "https://github.com/longda/static/raw/master/unity3d/space-shooter/ss.unity3d");
 	});
 -->
 </script>
@@ -63,8 +63,8 @@ document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/
 <!--
 body {
 	font-family: Helvetica, Verdana, Arial, sans-serif;
-	background-color: black;
-	color: white;
+	background-color: #00AAAA;
+	color: #008E8E;
 	text-align: center;
 }
 a:link, a:visited {
@@ -184,43 +184,31 @@ div#unityPlayer {
 	margin-top: 100px;
 }
 
-.wizard {
-	color: #AE81FF;
+.space {
+	color: #008E8E;
 }
 
-.heart {
-	color: #F92672;
-}
-
-.panda {
-	color: #FFCCFF;
-}
-
-.bunny {
-	color: #66D9EF;
-}
-
-.elephant {
-	color: #FFCC00;
+.rock {
+	color: #FFF;
 }
 
 .skull {
-	color: #000;
+	color: #00AAAA;
 }
 
 .soft {
-	color: #DDD;
+	color: #008E8E;
 }
 -->
 </style>
 
 <div class="normal">
-	<h2 class="h2 mb-0 mt-2"><span class="wizard">Wizards</span> <span class="heart">♥</span> <span class="panda">Pandas</span>.</h2>
-	<h2 class="h2 mb-0 mt-0">And <span class="bunny">Bunnies</span>.</h2>
-	<h2 class="h2 mb-4 mt-0">And <span class="elephant">Hellephants</span>.</h2>
+	<h2 class="h2 mb-0 mt-2"><span class="space">Space</span> <span class="rock">Rocks</span>.</h2>
+	<!-- <h2 class="h2 mb-0 mt-0">And <span class="bunny">Bunnies</span>.</h2>
+	<h2 class="h2 mb-4 mt-0">And <span class="elephant">Hellephants</span>.</h2> -->
 
-	<h4 class="h4 mt-6 mb-2">CONTROLS: <span class="soft">WASD keys - move, mouse - look/aim, click - fire</span>.</h4>
-	<h4 class="h4 mt-0 mb-8">GOAL: <span class="soft">Stay alive, left 4 dead style, as long as possible. Good luck.</span> <span class="skull">☠</span></h4>
+	<h4 class="h4 mt-6 mb-2">CONTROLS: <span class="soft">WASD keys - move, click - fire</span>.</h4>
+	<h4 class="h4 mt-0 mb-8">GOAL: <span class="soft">Survive the waves of rocks for as long as you can. Good luck.</span> <span class="skull">☠</span></h4>
 </div>
 <div class="content">
 	<div id="unityPlayer">
@@ -237,7 +225,7 @@ div#unityPlayer {
 	</div>
 </div>
 <div class="normal">
-	<h4 class="h4 mt-10 mb-10">Game built with assets and <a href="http://unity3d.com/learn/tutorials/projects/survival-shooter">tutorial</a> provided by unity3d.</h4>
+	<h4 class="h4 mt-10 mb-10">Game built with assets and <a href="http://unity3d.com/learn/tutorials/projects/space-shooter">tutorial</a> provided by unity3d.</h4>
 </div>
 <p class="header"><span>Unity Web Player | </span>Nightmares</p>
 <p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
