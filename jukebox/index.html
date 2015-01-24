@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Jukebox - Made with Plangular</title>
+  <link rel="stylesheet" href="autobass.css"/>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
   <script src="http://d2v52k3cl9vedd.cloudfront.net/plangular/2.0-beta-1/ng-plangular.min.js"></script>
 </head>
 <body ng-app="plangular">
-  <!-- <div plangular="http://soundcloud.com/jxnblk/plangular"></div> -->
-  <div class="table"
-  plangular="http://soundcloud.com/mrsjxn/bbb">
+  <div class="table" plangular="http://soundcloud.com/mrsjxn/bbb">
   <div class="table-cell">
     <button class="button-icon" ng-click="playPause()">
       <svg ng-if="player.playing != track" plangular-icon="play"></svg>
