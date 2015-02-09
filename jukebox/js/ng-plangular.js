@@ -22,7 +22,7 @@ plangular.config(['$routeProvider', function($routeProvider) {
       redirectTo: function(routeParams, path, search) {
         console.log(routeParams);
         console.log(path);
-        console.log(serach);
+        console.log(search);
         return '/';
       }
     })
@@ -31,7 +31,7 @@ plangular.config(['$routeProvider', function($routeProvider) {
       controller: 'MainCtrl'
     })
     .otherwise({
-      redirectTo: "/bob"
+      redirectTo: '/bob'
     })
 }]);
 
