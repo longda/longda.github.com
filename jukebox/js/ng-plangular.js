@@ -15,19 +15,19 @@
 
 var plangular = angular.module('plangular', []);
 
-plangular.config(function($routeProvider) {
-  $routeProvider
-    .when('/:foo',
-    {
-      controller: 'MainCtrl'
-    })
-});
+// plangular.config(function($routeProvider) {
+//   $routeProvider
+//     .when('/:foo',
+//     {
+//       controller: 'MainCtrl'
+//     })
+// });
 
-plangular.controller('MainCtrl', function($scope, $routeParams) {
-  $scope.model = {
-    foo: $routeParams.foo
-  }
-});
+// plangular.controller('MainCtrl', function($scope, $routeParams) {
+//   $scope.model = {
+//     foo: $routeParams.foo
+//   }
+// });
 
 plangular.directive('plangular', ['$http', 'plangularConfig', function ($http, plangularConfig) {
   var clientId = plangularConfig.clientId;
