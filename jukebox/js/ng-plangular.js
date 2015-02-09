@@ -24,7 +24,7 @@ plangular.config(['$routeProvider', function($routeProvider) {
     .when('/:foo',
     {
       controller: 'MainCtrl'
-    }
+    })
     .otherwise({
       redirectTo: "/"
     })
