@@ -13,9 +13,9 @@
 
 'use strict';
 
-var plangular = angular.module('plangular', []);
+var plangular = angular.module('plangular', ['ngRoute']);
 
-plangular.config(function($routeProvider) {
+plangular.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     // .when('/:foo',
     // {
@@ -24,12 +24,11 @@ plangular.config(function($routeProvider) {
     .when('/pizza',
     {
       template: "yum"
-    }
+    })
     .otherwise({
       redirectTo: "/"
     })
-    )
-});
+}]);
 
 // plangular.controller('MainCtrl', function($scope, $routeParams) {
 //   $scope.model = {
