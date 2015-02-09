@@ -15,13 +15,21 @@
 
 var plangular = angular.module('plangular', []);
 
-// plangular.config(function($routeProvider) {
-//   $routeProvider
-//     .when('/:foo',
-//     {
-//       controller: 'MainCtrl'
-//     })
-// });
+plangular.config(function($routeProvider) {
+  $routeProvider
+    // .when('/:foo',
+    // {
+    //   controller: 'MainCtrl'
+    // }
+    .when('/pizza',
+    {
+      template: "yum"
+    }
+    .otherwise({
+      redirectTo: "/"
+    })
+    )
+});
 
 // plangular.controller('MainCtrl', function($scope, $routeParams) {
 //   $scope.model = {
