@@ -12,6 +12,7 @@
   <section class="m1">
 
 <div plangular="http://soundcloud.com/jxnblk/sets/yello">
+    <h1>{{ model.foo || 'unknown' }}</h1>
     <div class="table mb1">
       <h3 class="table-cell full-width m0">{{ user.username || '&nbsp;' }}</h3>
       <small class="h6 table-cell nowrap">{{ currentTime | prettyTime }} - {{ duration | prettyTime }}</small>
