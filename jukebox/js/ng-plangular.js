@@ -19,11 +19,11 @@ plangular.config(function($routeProvider) {
   $routeProvider
     .when('/:foo',
     {
-      controller: "MainCtrl"
+      controller: 'MainCtrl'
     })
 });
 
-plangular.controller("MainCtrl", function($scope, $routeParams) {
+plangular.controller('MainCtrl', function($scope, $routeParams) {
   $scope.model = {
     foo: $routeParams.foo
   }
