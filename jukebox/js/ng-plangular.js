@@ -17,14 +17,14 @@ var plangular = angular.module('plangular', ['ngRoute']);
 
 plangular.config(['$routeProvider', function($routeProvider) {
   $routeProvider
-    // .when('/:foo',
-    // {
-    //   controller: 'MainCtrl'
-    // }
     .when('/pizza',
     {
       template: "yum"
     })
+    .when('/:foo',
+    {
+      controller: 'MainCtrl'
+    }
     .otherwise({
       redirectTo: "/"
     })
