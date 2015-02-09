@@ -38,7 +38,7 @@ plangular.config(['$routeProvider', function($routeProvider) {
 plangular.controller('MainCtrl', ['$scope', '$routeParams',
   function($scope, $routeParams) {
     $scope.foo = $routeParams.foo;
-});
+}]);
 
 plangular.directive('plangular', ['$http', 'plangularConfig', function ($http, plangularConfig) {
   var clientId = plangularConfig.clientId;
