@@ -17,23 +17,27 @@ var plangular = angular.module('plangular', ['ngRoute']);
 
 plangular.config(['$routeProvider', function($routeProvider) {
   $routeProvider
-    .when('/pizza',
+    .when('/pizza/:crust/:toppings',
     {
-      template: "yum"
+      redirectTo: function(routeParams, path, search) {
+        console.log(routeParams);
+        console.log(path);
+        console.log(serach);
+        return '/';
+      }
     })
     .when('/:foo',
     {
       controller: 'MainCtrl'
     })
     .otherwise({
-      redirectTo: "/"
+      redirectTo: "/bob"
     })
 }]);
 
-plangular.controller('MainCtrl', function($scope, $routeParams) {
-  $scope.model = {
-    foo: $routeParams.foo
-  }
+plangular.controller('MainCtrl', ['$scope', '$routeParams',
+  function($scope, $routeParams) {
+    $scope.foo = $routeParams.foo;
 });
 
 plangular.directive('plangular', ['$http', 'plangularConfig', function ($http, plangularConfig) {
