@@ -10,7 +10,8 @@ jukeboxApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider
       .when('/pizza', {
-
+        template: 'nom',
+        controller: "PizzaCtrl"
       })
       .otherwise({
         redirectTo: '/pizza'

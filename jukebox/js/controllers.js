@@ -6,6 +6,5 @@ var jukeboxControllers = angular.module('jukeboxControllers', []);
 
 jukeboxControllers.controller('PizzaCtrl', ['$scope', '$routeParams',
   function($scope, $routeParams) {
-    console.log('inside pizza controller')
-  }
-]);
+    console.log('IM IN YR pizza controller...')
+}]);
