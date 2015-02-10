@@ -3,7 +3,8 @@
 /* App Module */
 
 var jukeboxApp = angular.module('jukeboxApp', [
-  'ngRoute'
+  'ngRoute',
+  'jukeboxControllers'
 ]);
 
 jukeboxApp.config(['$routeProvider',
