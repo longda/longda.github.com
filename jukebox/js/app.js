@@ -10,6 +10,10 @@ var jukeboxApp = angular.module('jukeboxApp', [
 jukeboxApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider
+      .when('/playlist/:username/:setname', {
+        templateUrl: 'partials/playlist.html',
+        controller: 'PlaylistCtrl'
+      })
       .when('/pizza', {
         template: 'nom',
         controller: "PizzaCtrl"

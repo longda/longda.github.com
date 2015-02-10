@@ -15,34 +15,6 @@
 
 var plangular = angular.module('plangular', ['ngRoute']);
 
-
-/*
-plangular.config(['$routeProvider', function($routeProvider) {
-  $routeProvider
-    .when('/pizza/:crust/:toppings',
-    {
-      redirectTo: function(routeParams, path, search) {
-        console.log(routeParams);
-        console.log(path);
-        console.log(search);
-        return '/';
-      }
-    })
-    .when('/:foo',
-    {
-      controller: 'MainCtrl'
-    })
-    .otherwise({
-      redirectTo: '/bob'
-    })
-}]);
-
-plangular.controller('MainCtrl', ['$scope', '$routeParams',
-  function($scope, $routeParams) {
-    $scope.foo = $routeParams.foo;
-}]);
-*/
-
 plangular.directive('plangular', ['$http', 'plangularConfig', function ($http, plangularConfig) {
   var clientId = plangularConfig.clientId;
 
