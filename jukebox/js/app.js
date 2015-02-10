@@ -4,7 +4,8 @@
 
 var jukeboxApp = angular.module('jukeboxApp', [
   'ngRoute',
-  'jukeboxControllers'
+  'jukeboxControllers',
+  'plangular'
 ]);
 
 jukeboxApp.config(['$routeProvider',
