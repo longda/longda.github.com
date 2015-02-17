@@ -686,6 +686,12 @@ a:hover {
   opacity: 0.8;
   -webkit-transition: opacity 0.4s; }*/
 
+ul {
+ list-style-type: square;
+ list-style-position: inside;
+ list-style-image: none;
+}
+
 hr {
   background: #000000;
   border-style: solid;
