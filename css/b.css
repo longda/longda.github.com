@@ -678,13 +678,25 @@ a:hover {
   max-width: 640px;
   margin: 0 auto; }
 
-.opacity-hover {
+/*.opacity-hover {
   -webkit-transition: opacity 0.4s;
   opacity: 1; }
 
 .opacity-hover:hover {
   opacity: 0.8;
-  -webkit-transition: opacity 0.4s; }
+  -webkit-transition: opacity 0.4s; }*/
+
+hr {
+  background: #000000;
+}
+
+hr.fat {
+  height: 5px;
+}
+
+hr.thin {
+  height: 1px;
+}
 
 @media screen and (min-width: 1024px) {
 .h1 {
