@@ -535,23 +535,6 @@ h2, h3, h4, h5, h6 {
 
 /* Headers
    ========================================================================== */
-/*.h1 {
-  font-size: 64px; }
-
-.h2 {
-  font-size: 48px; }
-
-.h3 {
-  font-size: 32px; }
-
-.h4 {
-  font-size: 20px; }
-
-.h5 {
-  font-size: 16px; }
-
-.h6 {
-  font-size: 12px; }*/
 
 .h1 {
   font-size: 256px; }
@@ -708,4 +691,4 @@ a:hover {
   .h3 {
     font-size: 48px; } }*/
 
-/* a.scss bottom 2015.01.08-15.01.33 
+/* b.scss bottom 2015.01.08-15.01.33 
