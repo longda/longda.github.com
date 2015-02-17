@@ -679,7 +679,7 @@ body, html {
   background-size: cover; }*/
 
 a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
-  text-decoration: none;
+  text-decoration: underline;
   color: #000; }
 
 a:hover {
