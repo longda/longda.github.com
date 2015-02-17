@@ -688,6 +688,7 @@ a:hover {
 
 hr {
   background: #000000;
+  border-style: solid;
 }
 
 hr.fat {
