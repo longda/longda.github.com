@@ -537,25 +537,25 @@ h2, h3, h4, h5, h6 {
    ========================================================================== */
 
 .h1 {
-  font-size: 256px; }
-
-.h2 {
   font-size: 128px; }
 
-.h3 {
+.h2 {
   font-size: 64px; }
 
-.h4 {
+.h3 {
   font-size: 32px; }
 
-.h5 {
+.h4 {
   font-size: 20px; }
 
-.h6 {
+.h5 {
   font-size: 16px; }
 
+.h6 {
+  font-size: 12px; }
+
 .mega {
-  font-size: 512px; }
+  font-size: 256px; }
 
 .bold-italic {
   font-style: italic;
@@ -685,10 +685,27 @@ a:hover {
   opacity: 0.8;
   -webkit-transition: opacity 0.4s; }
 
-/*@media screen and (min-width: 1024px) {
-  .mega {
-    font-size: 256px; }
-  .h3 {
-    font-size: 48px; } }*/
+@media screen and (min-width: 1024px) {
+.h1 {
+  font-size: 256px; }
+
+.h2 {
+  font-size: 128px; }
+
+.h3 {
+  font-size: 64px; }
+
+.h4 {
+  font-size: 32px; }
+
+.h5 {
+  font-size: 20px; }
+
+.h6 {
+  font-size: 16px; }
+
+.mega {
+  font-size: 512px; }
+}
 
 /* b.scss bottom 2015.01.08-15.01.33 
