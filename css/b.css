@@ -1,4 +1,4 @@
-/*
+
   Many styles lovingly borrowed from: http://nkd.cc/css/i.css
 */
 /* ==========================================================================
@@ -517,28 +517,6 @@ table {
    - Copy
 
    ========================================================================== */
-/*.serif      { font-family: georgia, serif; }
-.sans-serif {
-  font-family:
-    Avenir, "Avenir Next",
-    Helvetica,
-    Arial,
-    sans-serif;
-}*/
-/*body {
-  font-family: 'Lato', helvetica, arial, sans-serif; }
-
-.serif {
-  font-family: 'Josefin Slab', georgia, serif; }
-
-.sans-serif {
-  font-family: 'Lato', helvetica, arial, sans-serif; }
-
-h1 {
-  font-family: 'Orbitron', helvetica, arial, sans-serif; }
-
-h2, h3, h4, h5, h6 {
-  font-family: 'Lato', helvetica, arial, sans-serif; }*/
 
 body {
   font-family: helvetica, arial, sans-serif; }
@@ -557,7 +535,7 @@ h2, h3, h4, h5, h6 {
 
 /* Headers
    ========================================================================== */
-.h1 {
+/*.h1 {
   font-size: 64px; }
 
 .h2 {
@@ -573,7 +551,25 @@ h2, h3, h4, h5, h6 {
   font-size: 16px; }
 
 .h6 {
-  font-size: 12px; }
+  font-size: 12px; }*/
+
+.h1 {
+  font-size: 256px; }
+
+.h2 {
+  font-size: 128px; }
+
+.h3 {
+  font-size: 64px; }
+
+.h4 {
+  font-size: 32px; }
+
+.h5 {
+  font-size: 20px; }
+
+.h6 {
+  font-size: 16px; }
 
 .mega {
   font-size: 100px; }
@@ -712,4 +708,4 @@ a.dk-bg {
   .h3 {
     font-size: 48px; } }
 
-/* a.scss bottom 2015.01.08-15.01.33 */
+/* a.scss bottom 2015.01.08-15.01.33 
