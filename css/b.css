@@ -686,6 +686,10 @@ a:hover {
   opacity: 0.8;
   -webkit-transition: opacity 0.4s; }*/
 
+img {
+  max-width: 100%;
+}
+
 ol {
  list-style-position: inside;
 }
@@ -707,6 +711,21 @@ hr.fat {
 
 hr.thin {
   height: 1px;
+}
+
+
+.vid-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.vid-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 1024px) {
