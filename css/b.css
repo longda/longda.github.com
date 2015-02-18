@@ -667,8 +667,8 @@ a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
   color: #000; }
 
 a:hover {
-  background: #a2d7e4;
-  color: #1e5a69; }
+  background: #FF76BC;
+  color: #F92672; }
 
 /*a.dk-bg {
   background: none;
