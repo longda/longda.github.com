@@ -703,14 +703,11 @@ ul {
 hr {
   background: #000000;
   border-style: solid;
+  height: 1px;
 }
 
 hr.fat {
   height: 5px;
-}
-
-hr.thin {
-  height: 1px;
 }
 
 ::selection { 
