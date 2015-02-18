@@ -668,7 +668,7 @@ a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
 
 a:hover {
   background: #FFE9EC;
-  color: #F92672; }
+  color: #FE57A1; }
 
 /*a.dk-bg {
   background: none;
@@ -713,13 +713,20 @@ hr.thin {
   height: 1px;
 }
 
+::selection { 
+  background: #fe57a1; 
+  color: #fff; 
+  text-shadow: none; 
+}
 
+/* http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 .vid-wrap {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
 }
+
 .vid-wrap iframe {
   position: absolute;
   top: 0;
