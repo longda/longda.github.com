@@ -732,6 +732,10 @@ hr.fat {
   height: 100%;
 }
 
+.heart {
+  color: #F92672;
+}
+
 @media screen and (min-width: 1024px) {
 .h1 {
   font-size: 256px; }
