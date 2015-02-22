@@ -736,6 +736,10 @@ hr.fat {
   color: #F92672;
 }
 
+.star {
+  color: #FFCC00;
+}
+
 @media screen and (min-width: 1024px) {
 .h1 {
   font-size: 256px; }
