@@ -13,8 +13,28 @@ img {
    margin-top: -70px; /* Half the height */
    margin-left: -86px; /* Half the width */
 }
+
+.put-a-bird-on-it {
+  fill: #000000;
+
+  -webkit-transition-property:fill, text;
+  -webkit-transition-duration: 1s, 1s;
+  -webkit-transition-timing-function: linear, ease-in;
+
+  -moz-transition-property:fill, text;
+  -moz-transition-duration:1s;
+  -moz-transition-timing-function: linear, ease-in;
+
+  -o-transition-property:fill, text;
+  -o-transition-duration:1s;
+  -o-transition-timing-function: linear, ease-in;
+}
+
+.put-a-bird-on-it::hover {
+  fill: #2AA9E0;
+}
 </style>
 
 <div class="ct-off">
-<img src="/images/svg/twitter_bird_logo_2012.svg" alt="@longda">
+<img class="put-a-bird-on-it" src="/images/svg/twitter_bird_logo_2012.svg" alt="@longda">
 </div>
