@@ -155,7 +155,9 @@ hr {
  */
 mark {
   background: #ff0;
-  color: #000; }
+  color: #000000; 
+  color: #FFFFFF; 
+}
 
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
@@ -636,7 +638,11 @@ body, html {
   position: relative;
   font-size: 20px;
   margin: 0;
-  padding: 0; }
+  padding: 0; 
+
+  background: #000000;
+  color: #ffffff;
+}
 
 /*.bt {
   border-top: 1px solid #ddd; }
@@ -664,7 +670,9 @@ body, html {
 
 a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
   text-decoration: underline;
-  color: #000; }
+  color: #000000;
+  color: #FFFFFF;  
+}
 
 a:hover {
   background: #FFE9EC;
@@ -702,6 +710,7 @@ ul {
 
 hr {
   background: #000000;
+  background: #FFFFFF;
   border-style: solid;
   height: 1px;
 }
@@ -712,7 +721,8 @@ hr.fat {
 
 ::selection { 
   background: #fe57a1; 
-  color: #fff; 
+  color: #ffffff;
+  color: #000000; 
   text-shadow: none; 
 }
 
