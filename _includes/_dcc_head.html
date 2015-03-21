@@ -9,9 +9,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  {% assign random = site.time | date: "%s%N" | modulo: 10 %}
+  <!-- ze random: {{ random }} -->
+
+
   <link rel="stylesheet" href="/css/b.css" type="text/css" title="default" >
   <link rel="alternate stylesheet" href="/css/black.css" type="text/css" title="black" >
-  
+
   <!--<link rel="stylesheet" href="/css/b.min.css">-->
 
   <!-- Favicons and Touch Device Icons -->
