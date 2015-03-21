@@ -34,23 +34,29 @@ gulp.task('bs-reload', function () {
 
 
 gulp.task('minify-css', function(){
-gulp.src('./css/a.css') // set this to the file(s) you want to minify. 
+  gulp.src('./css/a.css') // set this to the file(s) you want to minify. 
     .pipe(minifyCSS())
     .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
     .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
     .pipe(rename('a.min.css'))
     .pipe(gulp.dest('./css/'));
-gulp.src('./css/b.css') // set this to the file(s) you want to minify. 
+  gulp.src('./css/b.css') // set this to the file(s) you want to minify. 
     .pipe(minifyCSS())
     .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
     .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
     .pipe(rename('b.min.css'))
     .pipe(gulp.dest('./css/'));
-gulp.src('./css/black.css') // set this to the file(s) you want to minify. 
+  gulp.src('./css/black.css') // set this to the file(s) you want to minify. 
     .pipe(minifyCSS())
     .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
     .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
     .pipe(rename('black.min.css'))
+    .pipe(gulp.dest('./css/'));
+  gulp.src('./css/teal.css') // set this to the file(s) you want to minify. 
+    .pipe(minifyCSS())
+    .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
+    .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
+    .pipe(rename('teal.min.css'))
     .pipe(gulp.dest('./css/'));
 });
 
@@ -114,6 +120,17 @@ gulp.task('pre-process', function(){
         .pipe(browserSync.reload({stream:true}));
       }));
   gulp.src('./_sass/black.scss')
+    .pipe(watch(function(files) {
+      return files.pipe(sass()).on('error', errorHandler)
+        .pipe(size({gzip: false, showFiles: true, title:'without vendor prefixes'}))
+        .pipe(size({gzip: true, showFiles: true, title:'without vendor prefixes'}))
+        .pipe(prefix())
+        .pipe(size({gzip: false, showFiles: true, title:'after vendor prefixes'}))
+        .pipe(size({gzip: true, showFiles: true, title:'after vendor prefixes'}))
+        .pipe(gulp.dest('css'))
+        .pipe(browserSync.reload({stream:true}));
+      }));
+  gulp.src('./_sass/teal.scss')
     .pipe(watch(function(files) {
       return files.pipe(sass()).on('error', errorHandler)
         .pipe(size({gzip: false, showFiles: true, title:'without vendor prefixes'}))

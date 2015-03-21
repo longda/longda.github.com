@@ -61,7 +61,7 @@ function get_cookie(cookie_name){
 }
 
 function ss(){
-  var styles = ['default', 'black'];
+  var styles = ['default', 'black', 'teal'];
   var roll = Math.floor(Math.random() * 1000 % styles.length);
   switch_style(styles[roll]);
 }
@@ -71,8 +71,7 @@ document.addEventListener('DOMContentLoaded', ss, false);
 
   <link rel="stylesheet" href="/css/b.css" type="text/css" title="default" >
   <link rel="alternate stylesheet" href="/css/black.css" type="text/css" title="black" >
-
-  <!--<link rel="stylesheet" href="/css/b.min.css">-->
+  <link rel="alternate stylesheet" href="/css/teal.css" type="text/css" title="teal" >
 
   <!-- Favicons and Touch Device Icons -->
   <link rel="shortcut icon" href="favicon.ico">
