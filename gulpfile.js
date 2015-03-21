@@ -40,6 +40,18 @@ gulp.src('./css/a.css') // set this to the file(s) you want to minify.
     .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
     .pipe(rename('a.min.css'))
     .pipe(gulp.dest('./css/'));
+gulp.src('./css/b.css') // set this to the file(s) you want to minify. 
+    .pipe(minifyCSS())
+    .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
+    .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
+    .pipe(rename('b.min.css'))
+    .pipe(gulp.dest('./css/'));
+gulp.src('./css/black.css') // set this to the file(s) you want to minify. 
+    .pipe(minifyCSS())
+    .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
+    .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
+    .pipe(rename('black.min.css'))
+    .pipe(gulp.dest('./css/'));
 });
 
 // Task to optimize and minify svg
@@ -77,6 +89,7 @@ gulp.task('csslint', function(){
 });
 
 // Task that compiles scss files down to good old css
+// TODO: switch to an array of css files
 gulp.task('pre-process', function(){
   gulp.src('./_sass/a.scss')
       .pipe(watch(function(files) {
@@ -88,6 +101,28 @@ gulp.task('pre-process', function(){
           .pipe(size({gzip: true, showFiles: true, title:'after vendor prefixes'}))
           .pipe(gulp.dest('css'))
           .pipe(browserSync.reload({stream:true}));
+      }));
+  gulp.src('./_sass/b.scss')
+    .pipe(watch(function(files) {
+      return files.pipe(sass()).on('error', errorHandler)
+        .pipe(size({gzip: false, showFiles: true, title:'without vendor prefixes'}))
+        .pipe(size({gzip: true, showFiles: true, title:'without vendor prefixes'}))
+        .pipe(prefix())
+        .pipe(size({gzip: false, showFiles: true, title:'after vendor prefixes'}))
+        .pipe(size({gzip: true, showFiles: true, title:'after vendor prefixes'}))
+        .pipe(gulp.dest('css'))
+        .pipe(browserSync.reload({stream:true}));
+      }));
+  gulp.src('./_sass/black.scss')
+    .pipe(watch(function(files) {
+      return files.pipe(sass()).on('error', errorHandler)
+        .pipe(size({gzip: false, showFiles: true, title:'without vendor prefixes'}))
+        .pipe(size({gzip: true, showFiles: true, title:'without vendor prefixes'}))
+        .pipe(prefix())
+        .pipe(size({gzip: false, showFiles: true, title:'after vendor prefixes'}))
+        .pipe(size({gzip: true, showFiles: true, title:'after vendor prefixes'}))
+        .pipe(gulp.dest('css'))
+        .pipe(browserSync.reload({stream:true}));
       }));
 });
 

@@ -1,4 +1,7 @@
 /*
+// Include all partials you want compiled to <FILE_NAME>.css. You don't need to include the _ (underscore). Hooray.
+*/
+/*
   Many styles lovingly borrowed from: http://nkd.cc/css/i.css
 */
 /* ==========================================================================
@@ -22,6 +25,8 @@
 /* Large Breakpoint */
 /* Medium Breakpoint */
 /* Type Scale - I always need a type-scale
+   ========================================================================== */
+/* Colors - Overridable colors here
    ========================================================================== */
 /* ==========================================================================
    QUERIES
@@ -155,9 +160,7 @@ hr {
  */
 mark {
   background: #ff0;
-  color: #000000; 
-  color: #FFFFFF; 
-}
+  color: #000; }
 
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
@@ -519,7 +522,6 @@ table {
    - Copy
 
    ========================================================================== */
-
 body {
   font-family: helvetica, arial, sans-serif; }
 
@@ -537,10 +539,8 @@ h2, h3, h4, h5, h6 {
 
 /* Headers
    ========================================================================== */
-
 .h1 {
-  font-size: 100px; 
-}
+  font-size: 100px; }
 
 .h2 {
   font-size: 64px; }
@@ -638,41 +638,39 @@ body, html {
   position: relative;
   font-size: 20px;
   margin: 0;
-  padding: 0; 
-
+  padding: 0;
   background: #000000;
-  color: #ffffff;
-}
+  color: #FFFFFF; }
 
 /*.bt {
-  border-top: 1px solid #ddd; }
+ border-top: 1px solid #ddd;
+}
 
 .bg-dk {
   background: #111;
-  color: #f3f3f3; }
+  color: #f3f3f3;
+}
 
 .bg-li {
   color: #a2d7e4;
   background: #1e5a69;
-  -webkit-transition: background 0.4s;
-  transition: background 0.4s; }
+  -webkit-transition:background .4s;
+  transition:background .4s;
+}
 
 .shade {
-  background: rgba(0, 0, 0, 0.3); }*/
-
+  background: rgba(0,0,0,0.3);
+}*/
 /*.un-saturate {
   -webkit-filter:grayscale(1);
 }*/
 /*.banner-img {
   background: url(//davecancode.com/blog/images/earth.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  background-size: cover; }*/
-
+  background-size: cover;
+}*/
 a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
   text-decoration: underline;
-  color: #000000;
-  color: #FFFFFF;  
-}
+  color: #FFFFFF; }
 
 a:hover {
   background: #FFE9EC;
@@ -680,97 +678,84 @@ a:hover {
 
 /*a.dk-bg {
   background: none;
-  color: #ddd; }*/
-
+  color: #ddd;
+}
+*/
 .column {
   max-width: 640px;
   margin: 0 auto; }
 
 /*.opacity-hover {
-  -webkit-transition: opacity 0.4s;
-  opacity: 1; }
+  -webkit-transition:opacity .4s;
+  opacity: 1;
+}
 
 .opacity-hover:hover {
   opacity: 0.8;
-  -webkit-transition: opacity 0.4s; }*/
-
+  -webkit-transition:opacity .4s;
+}*/
 img {
-  max-width: 100%;
-}
+  max-width: 100%; }
 
 ol {
- list-style-position: inside;
-}
+  list-style-position: inside; }
 
 ul {
- list-style-type: square;
- list-style-position: inside;
- list-style-image: none;
-}
+  list-style-type: square;
+  list-style-position: inside;
+  list-style-image: none; }
 
 hr {
-  background: #000000;
   background: #FFFFFF;
   border-style: solid;
-  height: 1px;
-}
+  height: 1px; }
 
 hr.fat {
-  height: 5px;
-}
+  height: 5px; }
 
-::selection { 
-  background: #fe57a1; 
-  color: #ffffff;
-  color: #000000; 
-  text-shadow: none; 
-}
+::-moz-selection {
+  background: #FE57A1;
+  color: #000000;
+  text-shadow: none; }
+
+::selection {
+  background: #FE57A1;
+  color: #000000;
+  text-shadow: none; }
 
 /* http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 .vid-wrap {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
+  /* 16:9 */
   padding-top: 25px;
-  height: 0;
-}
+  height: 0; }
 
 .vid-wrap iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-}
+  height: 100%; }
 
 .heart {
-  color: #F92672;
-}
+  color: #F92672; }
 
 .star {
-  color: #FFCC00;
-}
+  color: #FFCC00; }
 
 @media screen and (min-width: 1024px) {
-.h1 {
-  font-size: 256px; }
-
-.h2 {
-  font-size: 128px; }
-
-.h3 {
-  font-size: 64px; }
-
-.h4 {
-  font-size: 32px; }
-
-.h5 {
-  font-size: 20px; }
-
-.h6 {
-  font-size: 16px; }
-
-.mega {
-  font-size: 512px; }
-}
-
-/* b.scss bottom 2015.01.08-15.01.33 
+  .h1 {
+    font-size: 256px; }
+  .h2 {
+    font-size: 128px; }
+  .h3 {
+    font-size: 64px; }
+  .h4 {
+    font-size: 32px; }
+  .h5 {
+    font-size: 20px; }
+  .h6 {
+    font-size: 16px; }
+  .mega {
+    font-size: 512px; } }

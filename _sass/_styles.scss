@@ -13,9 +13,12 @@ body, html {
   font-size: 20px;
   margin: 0;
   padding: 0;
+
+  background: $bg-color;
+  color: $fg-color;
 }
 
-.bt {
+/*.bt {
  border-top: 1px solid #ddd;
 }
 
@@ -33,38 +36,37 @@ body, html {
 
 .shade {
   background: rgba(0,0,0,0.3);
-}
+}*/
 
 /*.un-saturate {
   -webkit-filter:grayscale(1);
 }*/
-
-.banner-img {
+/*.banner-img {
   background: url(//davecancode.com/blog/images/earth.jpg) no-repeat center center;
   background-size: cover;
-}
+}*/
 
 a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
-  text-decoration: none;
-  color: #444;
+  text-decoration: underline;
+  color: $fg-color;
 }
 
 a:hover {
-  background: #a2d7e4;
-  color: #1e5a69;
+  background: $highlight-bg-color;
+  color: $highlight-fg-color;
 }
 
-a.dk-bg {
+/*a.dk-bg {
   background: none;
   color: #ddd;
 }
-
+*/
 .column {
   max-width: 640px;
   margin: 0 auto;
 }
 
-.opacity-hover {
+/*.opacity-hover {
   -webkit-transition:opacity .4s;
   opacity: 1;
 }
@@ -72,4 +74,81 @@ a.dk-bg {
 .opacity-hover:hover {
   opacity: 0.8;
   -webkit-transition:opacity .4s;
+}*/
+
+img {
+  max-width: 100%;
+}
+
+ol {
+ list-style-position: inside;
+}
+
+ul {
+ list-style-type: square;
+ list-style-position: inside;
+ list-style-image: none;
+}
+
+hr {
+  background: $fg-color;
+  border-style: solid;
+  height: 1px;
+}
+
+hr.fat {
+  height: 5px;
+}
+
+::selection { 
+  background: $highlight-fg-color; 
+  color: $bg-color; 
+  text-shadow: none; 
+}
+
+/* http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+.vid-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.vid-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.heart {
+  color: #F92672;
+}
+
+.star {
+  color: #FFCC00;
+}
+
+@media screen and (min-width: 1024px) {
+.h1 {
+  font-size: 256px; }
+
+.h2 {
+  font-size: 128px; }
+
+.h3 {
+  font-size: 64px; }
+
+.h4 {
+  font-size: 32px; }
+
+.h5 {
+  font-size: 20px; }
+
+.h6 {
+  font-size: 16px; }
+
+.mega {
+  font-size: 512px; }
 }

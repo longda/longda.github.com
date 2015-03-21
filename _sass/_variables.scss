@@ -31,11 +31,21 @@ $MEDIUM-min-width: 32em;
 /* Type Scale - I always need a type-scale
    ========================================================================== */
 
-$font-size-mega: 100px;
-$font-size-1: 64px;
-$font-size-2: 48px;
+$font-size-mega: 256px;
+$font-size-1: 100px;
+$font-size-2: 64px;
 $font-size-3: 32px;
 $font-size-4: 20px; // The new black
 $font-size-5: 16px;
 $font-size-6: 12px; // Should only be used for text you want no one to read.
+
+
+/* Colors - Overridable colors here
+   ========================================================================== */
+
+$fg-color: #000000;
+$bg-color: #FFFFFF;
+
+$highlight-fg-color: #FE57A1;
+$highlight-bg-color: #FFE9EC;
 
