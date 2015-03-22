@@ -639,8 +639,8 @@ body, html {
   font-size: 20px;
   margin: 0;
   padding: 0;
-  background: #FF2E12;
-  color: #B81B1B; }
+  background: #B81B1B;
+  color: #FF2E12; }
 
 /*.bt {
  border-top: 1px solid #ddd;
@@ -670,11 +670,11 @@ body, html {
 }*/
 a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
   text-decoration: underline;
-  color: #B81B1B; }
+  color: #FF2E12; }
 
 a:hover {
-  background: #AA4344;
-  color: #9E1716; }
+  background: #9E1716;
+  color: #BF3232; }
 
 /*a.dk-bg {
   background: none;
@@ -706,7 +706,7 @@ ul {
   list-style-image: none; }
 
 hr {
-  background: #B81B1B;
+  background: #FF2E12;
   border-style: solid;
   height: 1px; }
 
@@ -714,13 +714,13 @@ hr.fat {
   height: 5px; }
 
 ::-moz-selection {
-  background: #9E1716;
-  color: #FF2E12;
+  background: #BF3232;
+  color: #B81B1B;
   text-shadow: none; }
 
 ::selection {
-  background: #9E1716;
-  color: #FF2E12;
+  background: #BF3232;
+  color: #B81B1B;
   text-shadow: none; }
 
 /* http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
