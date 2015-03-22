@@ -673,8 +673,8 @@ a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
   color: #FFFFFF; }
 
 a:hover {
-  background: #FFE9EC;
-  color: #FE57A1; }
+  background: #A8024C;
+  color: #000000; }
 
 /*a.dk-bg {
   background: none;
@@ -714,12 +714,12 @@ hr.fat {
   height: 5px; }
 
 ::-moz-selection {
-  background: #FE57A1;
+  background: #000000;
   color: #000000;
   text-shadow: none; }
 
 ::selection {
-  background: #FE57A1;
+  background: #000000;
   color: #000000;
   text-shadow: none; }
 
