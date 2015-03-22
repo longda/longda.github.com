@@ -1,0 +1,23 @@
+/*
+// Include all partials you want compiled to <FILE_NAME>.css. You don't need to include the _ (underscore). Hooray.
+*/
+
+/*
+  Many styles lovingly borrowed from: http://nkd.cc/css/i.css
+*/
+
+@import "variables";
+
+$fg-color: #B81B1B;
+$bg-color: #FF2E12;
+$highlight-fg-color: #9E1716;
+$highlight-bg-color: #AA4344;
+
+
+@import "queries";
+@import "normalize";
+
+@import "grid";
+@import "type";
+@import "styles";
+
