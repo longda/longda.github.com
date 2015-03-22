@@ -61,7 +61,7 @@ function get_cookie(cookie_name){
 }
 
 function ss(){
-  var styles = ['default', 'black', 'purple', 'teal'];
+  var styles = ['default', 'black', 'green', 'purple', 'teal'];
   var roll = Math.floor(Math.random() * 1000 % styles.length);
   switch_style(styles[roll]);
 }
@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', ss, false);
 
   <link rel="stylesheet" href="/css/b.min.css" type="text/css" title="default" >
   <link rel="alternate stylesheet" href="/css/black.min.css" type="text/css" title="black" >
+  <link rel="alternate stylesheet" href="/css/green.min.css" type="text/css" title="green" >
   <link rel="alternate stylesheet" href="/css/purple.min.css" type="text/css" title="purple" >
   <link rel="alternate stylesheet" href="/css/teal.min.css" type="text/css" title="teal" >
 
