@@ -673,8 +673,8 @@ a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
   color: #691BB8; }
 
 a:hover {
-  background: #57169A;
-  color: #7F6E94; }
+  background: #7F6E94;
+  color: #57169A; }
 
 /*a.dk-bg {
   background: none;
@@ -714,12 +714,12 @@ hr.fat {
   height: 5px; }
 
 ::-moz-selection {
-  background: #7F6E94;
+  background: #57169A;
   color: #AA40FF;
   text-shadow: none; }
 
 ::selection {
-  background: #7F6E94;
+  background: #57169A;
   color: #AA40FF;
   text-shadow: none; }
 
