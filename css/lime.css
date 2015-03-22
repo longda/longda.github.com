@@ -640,7 +640,7 @@ body, html {
   margin: 0;
   padding: 0;
   background: #91D100;
-  color: #83BA1F; }
+  color: #64a200; }
 
 /*.bt {
  border-top: 1px solid #ddd;
@@ -670,7 +670,7 @@ body, html {
 }*/
 a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
   text-decoration: underline;
-  color: #83BA1F; }
+  color: #64a200; }
 
 a:hover {
   background: #94BD4A;
@@ -706,7 +706,7 @@ ul {
   list-style-image: none; }
 
 hr {
-  background: #83BA1F;
+  background: #64a200;
   border-style: solid;
   height: 1px; }
 
