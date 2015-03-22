@@ -52,6 +52,12 @@ gulp.task('minify-css', function(){
     .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
     .pipe(rename('black.min.css'))
     .pipe(gulp.dest('./css/'));
+    gulp.src('./css/blue.css') // set this to the file(s) you want to minify. 
+    .pipe(minifyCSS())
+    .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
+    .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
+    .pipe(rename('blue.min.css'))
+    .pipe(gulp.dest('./css/'));
   gulp.src('./css/green.css') // set this to the file(s) you want to minify. 
     .pipe(minifyCSS())
     .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
@@ -144,6 +150,17 @@ gulp.task('pre-process', function(){
         .pipe(browserSync.reload({stream:true}));
       }));
   gulp.src('./_sass/black.scss')
+    .pipe(watch(function(files) {
+      return files.pipe(sass()).on('error', errorHandler)
+        .pipe(size({gzip: false, showFiles: true, title:'without vendor prefixes'}))
+        .pipe(size({gzip: true, showFiles: true, title:'without vendor prefixes'}))
+        .pipe(prefix())
+        .pipe(size({gzip: false, showFiles: true, title:'after vendor prefixes'}))
+        .pipe(size({gzip: true, showFiles: true, title:'after vendor prefixes'}))
+        .pipe(gulp.dest('css'))
+        .pipe(browserSync.reload({stream:true}));
+      }));
+  gulp.src('./_sass/blue.scss')
     .pipe(watch(function(files) {
       return files.pipe(sass()).on('error', errorHandler)
         .pipe(size({gzip: false, showFiles: true, title:'without vendor prefixes'}))
