@@ -1,5 +1,11 @@
 /* app css stylesheet */
 
+input {
+  background: inherit;
+  border: none;
+  color: inherit;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
