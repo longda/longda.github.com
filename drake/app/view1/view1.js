@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function($scope) {
+.controller('View1Ctrl', ['$scope', function($scope) {
   $scope.height = 200;
   $scope.width = 300;
 }]);
