@@ -10,6 +10,11 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', ['$scope', function($scope) {
-  $scope.height = 200;
-  $scope.width = 300;
+  $scope.stars = 1.0;
+  $scope.planets = 0.5;
+  $scope.earth = 5;
+  $scope.life = 1.0;
+  $scope.intelligence = 1.0;
+  $scope.civilizations = 0.1;
+  $scope.length = 1000000;
 }]);
