@@ -1,13 +1,17 @@
 <main>
   <section class="pl-2 pr-2 column pt-6 pb-6" ng-controller="View1Ctrl">
     <h1 class="h2">Drake Equation</h1>
-    <p class="h2">{{stars * planets * earth * life * intelligence * civilizations * length * 1000 | number:0}}</p>
 
     <section>
         <p class="h3">
         $$N = {R_* \centerdot f_p \centerdot n_e \centerdot f_l \centerdot f_i \centerdot f_c \centerdot L}$$
         <p>
     </section>
+
+    <section>
+        <p class="h2">{{stars * planets * earth * life * intelligence * civilizations * length * 1000 | number:0}}</p>
+    </section>
+
 
     <section class="h3">
         <input ng-model="stars" placeholder="Stars?">
