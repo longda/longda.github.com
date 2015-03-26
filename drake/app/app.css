@@ -12,6 +12,8 @@ input:focus {
 }
 
 td {
+  border: 2px;
+  border-color: inherit;
   height: 2em;
   width: 2em;
 }
