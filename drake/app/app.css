@@ -4,6 +4,7 @@ input {
   background: inherit;
   border: none;
   color: inherit;
+  width: 2em;
 }
 
 input:focus {
