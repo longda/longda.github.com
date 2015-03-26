@@ -1,19 +1,23 @@
 <main>
-  <div class="pl-2 pr-2 column pt-6 pb-6" ng-controller="View1Ctrl">
+  <section class="pl-2 pr-2 column pt-6 pb-6" ng-controller="View1Ctrl">
     <h1 class="h2">Drake Equation</h1>
     <p class="h2">{{stars * planets * earth * life * intelligence * civilizations * length * 1000 | number:0}}</p>
 
-    <input class="h3" ng-model="stars" placeholder="Stars?">
-    <input class="h3" ng-model="planets" placeholder="Planets?">
-    <input class="h3" ng-model="earth" placeholder="Earth?">
-    <input class="h3" ng-model="life" placeholder="Life?">
-    <input class="h3" ng-model="intelligence" placeholder="Intelligence?">
-    <input class="h3" ng-model="civilizations" placeholder="Civilizations?">
-    <input class="h3" ng-model="length" placeholder="Length?">
-  </div>
-  <div class="pl-2 pr-2 column pt-6 pb-6">
-    <p class="h3">
-    $$N = {R_* \centerdot f_p \centerdot n_e \centerdot f_l \centerdot f_i \centerdot f_c \centerdot L}$$
-    <p>
-  </div>
+    <section>
+        <p class="h3">
+        $$N = {R_* \centerdot f_p \centerdot n_e \centerdot f_l \centerdot f_i \centerdot f_c \centerdot L}$$
+        <p>
+    </section>
+
+    <section class="h3">
+        <input ng-model="stars" placeholder="Stars?">
+        <input ng-model="planets" placeholder="Planets?">
+        <input ng-model="earth" placeholder="Earth?">
+        <input ng-model="life" placeholder="Life?">
+        <input ng-model="intelligence" placeholder="Intelligence?">
+        <input ng-model="civilizations" placeholder="Civilizations?">
+        <input ng-model="length" placeholder="Length?">
+    </section>
+  </section>
+
 </main>
