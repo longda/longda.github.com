@@ -14,13 +14,13 @@
 
 
     <section class="h3">
-        <input type="number" ng-model="stars" placeholder="Stars?">
-        <input ng-model="planets" placeholder="Planets?">
-        <input ng-model="earth" placeholder="Earth?">
-        <input ng-model="life" placeholder="Life?">
-        <input ng-model="intelligence" placeholder="Intelligence?">
-        <input ng-model="civilizations" placeholder="Civilizations?">
-        <input ng-model="length" placeholder="Length?">
+        <input type="number" ng-model="stars" ng-minlength="0" ng-maxlength="100" ng-required="" placeholder="Stars?">
+        <input type="number" ng-model="planets" ng-minlength="0" ng-maxlength="1" ng-required="" placeholder="Planets?">
+        <input type="number" ng-model="earth" ng-minlength="0" ng-maxlength="100" ng-required="" placeholder="Earth?">
+        <input type="number" ng-model="life" ng-minlength="0" ng-maxlength="1" ng-required="" placeholder="Life?">
+        <input type="number" ng-model="intelligence" ng-minlength="0" ng-maxlength="1" ng-required="" placeholder="Intelligence?">
+        <input type="number" ng-model="civilizations" ng-minlength="0" ng-maxlength="1" ng-required="" placeholder="Civilizations?">
+        <input type="number" ng-model="length" ng-minlength="1" ng-maxlength="100000" ng-required="" placeholder="Length?">
     </section>
   </section>
 
