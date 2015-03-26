@@ -16,5 +16,5 @@ angular.module('myApp.view1', ['ngRoute'])
   $scope.life = 0.9;
   $scope.intelligence = 0.9;
   $scope.civilizations = 0.1;
-  $scope.length = 10;
+  $scope.length = 1000;
 }]);
