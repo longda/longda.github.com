@@ -18,7 +18,9 @@ td {
   width: 3em;
 }
 
-
+.label {
+  text-align: right;
+}
 
 /* https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
 input[type=range] {
