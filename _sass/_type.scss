@@ -33,6 +33,8 @@ h2, h3, h4, h5, h6 {
 .h6 { font-size: $font-size-6; }
 
 .mega { font-size: $font-size-mega; }
+.bold { font-weight: 900; }
+.ital { font-style: italic; }
 .bold-italic {
   font-style: italic;
   font-weight: 900;
@@ -49,10 +51,6 @@ p {
   line-height: 1.5;
 }
 
-.caps {
-  text-transform: uppercase;
-}
-
 .ct {
   text-align: center;
 }
@@ -60,6 +58,9 @@ p {
 /* Casing
    ========================================================================== */
 
+.caps {
+  text-transform: uppercase;
+}
 .caps-lock  { text-transform: uppercase; }
 .title-casing { text-transform: capitalize; }
 
