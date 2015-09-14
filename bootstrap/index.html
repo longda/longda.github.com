@@ -133,6 +133,17 @@
                     <span style="display:none" data-bind="text: ko.toJSON($data, null, 2)"></span>
                   </td>
                 </tr>
+                <tr>
+                  <td data-bind="text: item.name"></td>
+                  <td data-bind="text: item.category"></td>
+                  <td data-bind="text: item.tier"></td>
+                  <td data-bind="text: item.damage"></td>
+                  <td data-bind="text: item.durability"></td>
+                  <td data-bind="text: item.stackLimit"></td>
+                  <td>
+                    
+                  </td>
+                </tr>
               </tbody>
             </table>
             <button class="btn btn-default" data-bind="click: addItem">Add Item</button>
