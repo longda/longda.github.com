@@ -138,10 +138,29 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
     <script>
-      var data = [
+      var data = {};
+      data.items = [
         { name: "Axe", category: "Tools", tier: "1", damage: 27.2, durability: 100, stackLimit: 1 }
       ];
 
+      var item = function() {
+        var self = this;
+        self.name = ko.observable();
+        self.category = ko.observable();
+        self.tier = ko.observable();
+        self.damage = ko.observable();
+        self.durability = ko.observable();
+        self.stackLimit = ko.observable();
+      };
+
+      var vm = function() {
+        var self = this;
+        self.items = ko.observableArray();
+
+        self.addItem = function() { self.items.push(new item()); };
+      };
+
+      ko.applyBindings(new vm());
     </script>
   </body>
 </html>
