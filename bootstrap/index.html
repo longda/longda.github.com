@@ -182,9 +182,11 @@
 
       var vm = function() {
         var self = this;
-        self.items = ko.observableArray();
+        self.items = ko.observableArray(new item());
 
-        self.addItem = function() { self.items.push(new item()); };
+        self.addItem = function() { 
+          self.items.push(new item()); 
+        };
       };
 
       ko.applyBindings(new vm());
