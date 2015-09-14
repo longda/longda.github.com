@@ -117,7 +117,7 @@
                   <th>Stack Limit</th>
                 </tr>
               </thead>
-              <tbody data-bind="foreach: { data: vm.items, as 'item' }">
+              <tbody data-bind="foreach: { data: vm.items, as: 'item' }">
                 <tr>
                   <td><input data-bind="value: item.name"></td>
                   <td><input data-bind="value: item.category"></td>
@@ -128,6 +128,7 @@
                 </tr>
               </tbody>
             </table>
+            <button data-bind="click: addItem">Add Item</button>
           </div>
 
           <h2 class="sub-header">Recipes</h2>
