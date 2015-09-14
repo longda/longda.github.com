@@ -142,6 +142,7 @@
                   <th>Damage</th>
                   <th>Durability</th>
                   <th>Stack Limit</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -152,6 +153,11 @@
                   <td>27.2</td>
                   <td>100</td>
                   <td>1</td>
+                  <td>
+                    <button type="button" class="btn btn-default" aria-label="delete" data-bind="click: $root.removeItem">
+                      <span class="glyphicon glyphicon glyphicon-trash"></span>
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -182,10 +188,14 @@
 
       var vm = function() {
         var self = this;
-        self.items = ko.observableArray(new item());
+        self.items = ko.observableArray([new item()]);
 
         self.addItem = function() { 
           self.items.push(new item()); 
+        };
+
+        self.removeItem = function(item) {
+          self.items.remove(item);
         };
       };
 
