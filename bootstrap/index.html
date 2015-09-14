@@ -130,6 +130,7 @@
                     <button type="button" class="btn btn-default" aria-label="delete" data-bind="click: $root.removeItem">
                       <span class="glyphicon glyphicon glyphicon-trash"></span>
                     </button>
+                    <span style="display:none" data-bind="$data"></span>
                   </td>
                 </tr>
               </tbody>
@@ -193,10 +194,12 @@
 
         self.addItem = function() { 
           self.items.push(new item()); 
+          console.log('added item... count is: ', self.items.length());
         };
 
         self.removeItem = function(item) {
           self.items.remove(item);
+          console.log('removed item... count is: ', self.items.length());
         };
       };
 
