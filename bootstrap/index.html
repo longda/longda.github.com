@@ -104,6 +104,32 @@
             </table>
           </div>
 
+          <h2 class="sub-header">Edit Items</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Category</th>
+                  <th>Tier</th>
+                  <th>Damage</th>
+                  <th>Durability</th>
+                  <th>Stack Limit</th>
+                </tr>
+              </thead>
+              <tbody data-bind="foreach: { data: vm.items, as 'item' }">
+                <tr>
+                  <td><input data-bind="value: item.name"></td>
+                  <td><input data-bind="value: item.category"></td>
+                  <td><input data-bind="value: item.tier"></td>
+                  <td><input data-bind="value: item.damage"></td>
+                  <td><input data-bind="value: item.durability"></td>
+                  <td><input data-bind="value: item.stackLimit"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <h2 class="sub-header">Recipes</h2>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -145,12 +171,12 @@
 
       var item = function() {
         var self = this;
-        self.name = ko.observable();
-        self.category = ko.observable();
-        self.tier = ko.observable();
-        self.damage = ko.observable();
-        self.durability = ko.observable();
-        self.stackLimit = ko.observable();
+        self.name = ko.observable("Item");
+        self.category = ko.observable("Category");
+        self.tier = ko.observable("Tier");
+        self.damage = ko.observable(12.5);
+        self.durability = ko.observable(100);
+        self.stackLimit = ko.observable(1);
       };
 
       var vm = function() {
