@@ -115,6 +115,7 @@
                   <th>Damage</th>
                   <th>Durability</th>
                   <th>Stack Limit</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody data-bind="foreach: { data: vm.items, as: 'item' }">
@@ -125,10 +126,15 @@
                   <td><input data-bind="value: item.damage"></td>
                   <td><input data-bind="value: item.durability"></td>
                   <td><input data-bind="value: item.stackLimit"></td>
+                  <td>
+                    <button type="button" class="btn btn-default" aria-label="delete" data-bind="click: $root.removeItem">
+                      <span class="glyphicon glyphicon glyphicon-trash"></span>
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
-            <button data-bind="click: addItem">Add Item</button>
+            <button class="btn btn-primary" data-bind="click: addItem">Add Item</button>
           </div>
 
           <h2 class="sub-header">Recipes</h2>
@@ -142,7 +148,6 @@
                   <th>Damage</th>
                   <th>Durability</th>
                   <th>Stack Limit</th>
-                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -153,11 +158,6 @@
                   <td>27.2</td>
                   <td>100</td>
                   <td>1</td>
-                  <td>
-                    <button type="button" class="btn btn-default" aria-label="delete" data-bind="click: $root.removeItem">
-                      <span class="glyphicon glyphicon glyphicon-trash"></span>
-                    </button>
-                  </td>
                 </tr>
               </tbody>
             </table>
