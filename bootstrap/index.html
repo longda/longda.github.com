@@ -118,7 +118,7 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody data-bind="foreach: { data: items, as: 'item' }">
+              <tbody data-bind="foreach: { data:  items, as: 'item' }">
                 <tr>
                   <td><input data-bind="textInput: item.name"/></td>
                   <td><input data-bind="textInput: item.category"/></td>
@@ -155,21 +155,25 @@
               <thead>
                 <tr>
                   <th></th>
-                  <th>Category</th>
-                  <th>Tier</th>
-                  <th>Damage</th>
-                  <th>Durability</th>
-                  <th>Stack Limit</th>
+                  <th>Item Required</th>
+                  <th>Quantity</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Axe</td>
-                  <td>Tools</td>
-                  <td>1</td>
-                  <td>27.2</td>
-                  <td>100</td>
-                  <td>1</td>
+                  <td>Hammer</td>
+                  <td>Twigs</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>Hammer</td>
+                  <td>Rocks</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>Hammer</td>
+                  <td>Rope</td>
+                  <td>2</td>
                 </tr>
               </tbody>
             </table>
@@ -186,7 +190,10 @@
     <script>
       var data = {};
       data.items = [
-        { name: "Axe", category: "Tools", tier: "1", damage: 27.2, durability: 100, stackLimit: 1 }
+        { name: "Axe", category: "Tools", tier: "1", damage: 27.2, durability: 100, stackLimit: 1 },
+        { name: "Pickaxe", category: "Tools", tier: "1", damage: 27.2, durability: 33, stackLimit: 1 },
+        { name: "Twigs", category: "Collectible", tier: "1", damage: 0, durability: 0, stackLimit: 1 },
+        { name: "Flint", category: "Collectible", tier: "1", damage: 0, durability: 0, stackLimit: 1 }
       ];
 
       var item = function() {
@@ -204,13 +211,11 @@
         self.items = ko.observableArray([new item()]);
 
         self.addItem = function() { 
-          self.items.push(new item()); 
-          console.log('added item... count is: ', self.items().length);
+          self.items.push(new item());
         };
 
         self.removeItem = function(item) {
           self.items.remove(item);
-          console.log('removed item... count is: ', self.items().length);
         };
       };
 
