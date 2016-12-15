@@ -2,6 +2,11 @@
 layout: dcc
 ---
 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<style>
+  body { font-family: 'Open Sans', sans-serif; }
+</style>
+
 <main>
   <div class="pl-2 pr-2 column pt-6">
     <h1 class="h2">Object Pool</h1>
@@ -11,7 +16,7 @@ layout: dcc
 
     <p>
       As part of an exploration into game development patterns and techniques with Unity3D, I built out a basic demo of an object pool that I could try out on my laptop and phone.  For this example, I used the Cat Like Coding Object Pool Tutorial as a base to work from and pulled some simple assets out of the store to use as placeholders.  The basic setup of the demo is to create a fountain of objects with physics by arranging spawners in a ring and launching prefabs onto a sphere in the center.  As objects fall off the sphere, they hit a kill zone underneath which returns the object to the pool.  Leveraging this technique I was able to maintain fairly smooth frame rates of over 30 FPS without any garbage collection issues or dropped frames.  I even pushed a build to my iPhone 6 and experienced very good results running the simple app for over 10 mins.
-    </p>  
+    </p>
 
     <h2 class="h3">What is an object pool?</h2>
     <p>
