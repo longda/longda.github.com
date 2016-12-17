@@ -49,6 +49,8 @@ layout: dcc
       Filling these pools during loading screens or in parallel across frames rather than blocking to make the allocations is a bit of an art, but there are scenarios where the whole thing can be allocated at once.  Some developers even go as far as pre-allocating all the memory their application will need in advance to avoid any hiccups due to garbage collection.
     </p>
 
+    <img src="img/object-pool-profiler.png" alt title="A sample profile run of my object pool">
+
     <h2 class="h3">What is one way to implement an object pool?</h2>
     <p>
       Implementing a basic object pool is fairly simple.  One way is to define a reference in your class for the pool this object belongs to.
