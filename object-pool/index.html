@@ -63,7 +63,7 @@ layout: dcc
       Video games, simulations, and virtual reality experiences are all prime candidates for this pattern due to demanding requirements for maintaining high frame rates.  This becomes even more of a challenge on mobile where resources are tightly constrained.
     </p>
     <p>
-      Filling these pools during loading screens or in parallel across frames rather than blocking to make the allocations is a bit of an art, but there are scenarios where the whole thing can be allocated at once.  Some developers even go as far as pre-allocating all the memory their application will need in advance to avoid any hiccups due to garbage collection.
+      Filling these pools during loading screens or in parallel across frames rather than blocking to make the allocations is a bit of an art, but there are scenarios where the whole thing can be allocated at once.  Some developers even go as far as pre-allocating all the memory their application will need in advance to avoid any hiccups due to garbage collection. <sup><a href="#fn1" id="ref1">1</a></sup>
     </p>
 
     <img src="img/object-pool-profiler.png" alt title="A sample profile run of my object pool">
@@ -96,6 +96,11 @@ layout: dcc
     </p>
     <p>
       I would even go as far as to say that the expandable collections underlying the StringBuilder and generic List classes in .Net are special case implementations of this pattern, especially when used with the Clear() method for reuse.
+    </p>
+
+    <h2 class="h3">Footnotes</h2>
+    <p>
+      <sup id="fn1">1. Playdead talks about how they allocate the entire 400 MB of memory required up front.  Additionally, they use a modified version of the Unity engine which changes the garbage collection algorithm to collect less frequently.  <a href="https://www.youtube.com/watch?v=mQ2KTRn4BMI">Unite 2016 - Tools, Tricks and Technologies for Reaching Stutter Free 60 FPS in INSIDE</a></sup>
     </p>
 
     <h2 class="h3">Further Reading</h2>
