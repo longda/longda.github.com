@@ -3,6 +3,7 @@ layout: dcc
 ---
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css" rel="stylesheet">
 <style>
   body { font-family: 'Open Sans', sans-serif; }
   .videoWrapper {
@@ -40,9 +41,10 @@ layout: dcc
       <a href="http://ludumdare.com/compo/ludum-dare-37/">Ludum Dare 37</a> took place December 9th through December 11th, 2016 and the theme was One Room.
     </p>
 
-    <h2 class="h3">Zombie Horde Mode</h2>
+
+    <h2 class="h3">One Room Horde Mode</h2>
     <p>
-      For this entry, I wanted to make a simple top down shooter in a single space with waves of enemies continually spawning until the player was eventually overwhelmed.
+      For this entry, I wanted to make a simple top down shooter in a single space with waves of zombies continually spawning until the player was eventually overwhelmed.
     </p>
     <p>
       As a scoring mechanism, each enemy killed would contribute one point and the user would start with five hearts constituting successful enemy attacks.
@@ -54,6 +56,32 @@ layout: dcc
     <div class="videoWrapper">
     <iframe width="640" height="360" src="https://www.youtube.com/embed/63udYPLi8Xk?showinfo=0" frameborder="0" allowfullscreen></iframe>
     </div>
+
+
+    <h2 class="h3">Enemies</h2>
+    <p>
+      For enemy spawning, I located three transforms at locations inside tents so random enemy prefabs can instantiated at these locations.
+    </p>
+    <p>
+      Additional spawn points and enemies can be added to the Game Manager inside the Unity editor.  Initially, I had a wave system built in so that I could manually create wave profiles and store them in the Game Manager but decided to programmatically generate the waves for horde mode.
+    </p>
+
+    <pre>
+      <code class="language-csharp">
+        void GenerateWave()
+      	{
+      		var nextWaveNumber = currentWaveNumber + 1;
+      		var w = new Wave();
+      		w.enemyCount = (int)Mathf.Pow(2, nextWaveNumber) + 1;
+      		w.timeBetweenSpawns = waves[currentWaveNumber].timeBetweenSpawns * 0.999f;
+      		w.enemy = enemies[rand.Next(enemies.Length)];
+      		w.enemy.startingHealth = 5 + (currentWaveNumber % 5);
+
+      		waves[nextWaveNumber] = w;
+      	}
+      </code>
+    </pre>
+
 
     <h2 class="h3">Unity3D Concepts Demonstrated</h2>
     <p>
@@ -87,3 +115,5 @@ layout: dcc
     <div class="pb-6 gap"></div>
   </div>
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
