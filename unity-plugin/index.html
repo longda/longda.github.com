@@ -54,19 +54,19 @@ layout: dcc
 
     <h2 class="h4">Visual Studio Plugin Project (platform specific plugin authoring)</h2>
     <p>
-    Create a new project in Visual Studio: Visual C#, Windows Universal, Class Library with .NET 4.6 - this is for your plugin code
-    Important: Verify that the nuget package for .NET core is the correct version (currently, Unity generates a 5.0.0 project but the latest is 5.3.3)
-    Place your plugin code files in this project
-    Create a second new project in Visual Studio: Visual C#, Classic Desktop, Class Library with .NET 3.5 - this will be a shadow project for stubs and to check compilation on other platforms and older apis (such as the Unity editor)
-    Add existing files (from the other project) to this project to check for compilation issues
+    Create a new project in Visual Studio: Visual C#, Windows Universal, Class Library with .NET 4.6 - this is for your plugin code</br>
+    Important: Verify that the nuget package for .NET core is the correct version (currently, Unity generates a 5.0.0 project but the latest is 5.3.3)</br>
+    Place your plugin code files in this project</br>
+    Create a second new project in Visual Studio: Visual C#, Classic Desktop, Class Library with .NET 3.5 - this will be a shadow project for stubs and to check compilation on other platforms and older apis (such as the Unity editor)</br>
+    Add existing files (from the other project) to this project to check for compilation issues</br>
     </p>
 
     <p>
-    Set the build architecture to “Any CPU”
-    In the 3.5 project, set the namespace and assembly name to the match what is in the 4.6 project
-    Set the build path of the projects to output libraries - this will usually be a relative path outside of the .NET project and into a Unity project
-    For the 4.6 project, output the dll into the directory: /Assets/Plugins/WSA
-    For the 3.5 project, output the dll into the directory: /Assets/Plugins
+    Set the build architecture to “Any CPU”</br>
+    In the 3.5 project, set the namespace and assembly name to the match what is in the 4.6 project</br>
+    Set the build path of the projects to output libraries - this will usually be a relative path outside of the .NET project and into a Unity project</br>
+    For the 4.6 project, output the dll into the directory: /Assets/Plugins/WSA</br>
+    For the 3.5 project, output the dll into the directory: /Assets/Plugins</br>
     </p>
 
     <p>
@@ -87,24 +87,24 @@ layout: dcc
 
     <h2 class="h4">Unity Application Project (consumes/bootstraps plugin)</h2>
     <p>
-    After your plugin has been built and output to Unity, a few more settings inside the Unity project must be set
-    Select the dll output into the root “Plugins” folder - this is the placeholder dll
-    Using the <a href="https://docs.unity3d.com/Manual/PluginInspector.html">Plugin Inspector</a>, uncheck “Any Platform” and select the desired platforms to use this placeholder dll in (all platforms checked but WSAPlayer)
-    Using the Plugin Inspector, check the “Don’t Process” checkbox
-    Select the dll output into the “Plugins/WSA” folder - this is the platform dll
-    Using the Plugin Inspector, check only the desired platform to use this dll (only WSAPlayer)
-    In the “Placeholder” drop down, select Assets > Plugins > My.dll (whatever the root dll is called)
+    After your plugin has been built and output to Unity, a few more settings inside the Unity project must be set</br>
+    Select the dll output into the root “Plugins” folder - this is the placeholder dll</br>
+    Using the <a href="https://docs.unity3d.com/Manual/PluginInspector.html">Plugin Inspector</a>, uncheck “Any Platform” and select the desired platforms to use this placeholder dll in (all platforms checked but WSAPlayer)</br>
+    Using the Plugin Inspector, check the “Don’t Process” checkbox</br>
+    Select the dll output into the “Plugins/WSA” folder - this is the platform dll</br>
+    Using the Plugin Inspector, check only the desired platform to use this dll (only WSAPlayer)</br>
+    In the “Placeholder” drop down, select Assets > Plugins > My.dll (whatever the root dll is called)</br>
     </p>
 
 
-    <h2 class="h3">Visual Studio Output Project (generated for final application)</h2>
+    <h2 class="h4">Visual Studio Output Project (generated for final application)</h2>
     <p>
     Verify any nuget packages and version numbers in the final generated project
     </p>
 
 
     <p>
-    Here is a sample project using the WebRTC for UWP library inside a Unity plugin for use on a HoloLens device:
+    Here is a sample project I came across while doing my research.  It uses the WebRTC for UWP library inside a Unity plugin for use on a HoloLens device:
 
     <ul>
       <li><a href="https://github.com/DanAndersen/webrtc-hololens-unity-docs">https://github.com/DanAndersen/webrtc-hololens-unity-docs</a> - documentation</li>
