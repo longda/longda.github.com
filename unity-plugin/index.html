@@ -52,7 +52,7 @@ layout: dcc
     When authoring a Unity plugin, it is important to setup your various project layouts correctly.  Once in the editor, Unity has a set of conventions it expects to be followed.  Most importantly, all plugin code needs to be in a folder called “Plugins” under the root “Assets” folder.  Additionally, platform specific versions of libraries can be placed in appropriate folders: ex. Assets/Plugins/WSA for windows store app specific dlls.
     </p>
 
-    <h2 class="h3">Visual Studio Plugin Project (platform specific plugin authoring)</h2>
+    <h2 class="h4">Visual Studio Plugin Project (platform specific plugin authoring)</h2>
     <p>
     Create a new project in Visual Studio: Visual C#, Windows Universal, Class Library with .NET 4.6 - this is for your plugin code
     Important: Verify that the nuget package for .NET core is the correct version (currently, Unity generates a 5.0.0 project but the latest is 5.3.3)
@@ -85,7 +85,7 @@ layout: dcc
     Since the 3.5 profile does not include NETFX_CORE, this code will show up as commented out</br>
     </p>
 
-    <h2 class="h3">Unity Application Project (consumes/bootstraps plugin)</h2>
+    <h2 class="h4">Unity Application Project (consumes/bootstraps plugin)</h2>
     <p>
     After your plugin has been built and output to Unity, a few more settings inside the Unity project must be set
     Select the dll output into the root “Plugins” folder - this is the placeholder dll
@@ -107,9 +107,9 @@ layout: dcc
     Here is a sample project using the WebRTC for UWP library inside a Unity plugin for use on a HoloLens device:
 
     <ul>
-      <li>https://github.com/DanAndersen/webrtc-hololens-unity-docs - documentation</li>
-      <li>https://github.com/DanAndersen/WSAUnity - the plugin project for Visual Studio</li>
-      <li>https://github.com/DanAndersen/WinPluginTest - the Unity project consuming the plugin output by the above project</li>
+      <li><a href="https://github.com/DanAndersen/webrtc-hololens-unity-docs">https://github.com/DanAndersen/webrtc-hololens-unity-docs</a> - documentation</li>
+      <li><a href="https://github.com/DanAndersen/WSAUnity">https://github.com/DanAndersen/WSAUnity</a> - the plugin project for Visual Studio</li>
+      <li><a href="https://github.com/DanAndersen/WinPluginTest">https://github.com/DanAndersen/WinPluginTest</a> - the Unity project consuming the plugin output by the above project</li>
     </ul>
     </p>
 
