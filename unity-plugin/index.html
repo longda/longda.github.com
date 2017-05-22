@@ -1,0 +1,124 @@
+---
+layout: dcc
+---
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<style>
+  body { font-family: 'Open Sans', sans-serif; }
+  .videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+
+<main>
+  <div class="pl-2 pr-2 column pt-6">
+    <h1 class="h2">Creating Plugins for Unity3D</h1>
+    <h2 class="h3"></h2>
+
+    <p>
+    One question I keep encountering is “how do I make a plugin in Unity?”  To address it I decided to document some of my findings in this plugin primer.  First, I'll define what a Unity plugin is and is not.  Next, I'll show some examples of existing Unity plugins.  Finally, I'll wrap up with a simple step-by-step setup of a plugin project in Visual Studio that outputs into a Unity application project.
+    </p>
+
+    <p>
+    Essentially, a Unity plugin is a way to use platform specific code and libraries within your Unity applications.  They come in two flavors: managed plugins which only use a subset of the .NET apis and native plugins which commonly interface directly with platform specific apis or sdks.  Typically, you’re either consuming someone else’s plugin (such as the Vuforia plugin in the Unity Asset Store) or authoring your own.  In some unique cases, you might be both consuming other developer’s plugins and authoring your own plugin within the same Unity project.
+    </p>
+
+    <p>
+    Alternatively, a Unity plugin is not a quick and easy way to slam breaking nuget packages into all of your platforms.  However - with a bit of care and planning - setting up, authoring, and consuming plugins in Unity is simple and relatively straightforward!
+
+    <p>
+    For reference, a few good examples of existing Unity Plugins are Vuforia, AV Pro, and the Xbox Live plugins.  These plugins have different native platform libraries that enabled depending on the platforms capabilities.  You can even take a peak at how they output their code and libraries either by installing the plugin directly into a project or through the viewer on the asset store.  The Xbox Live plugin also has a good example of help documentation and build scripts that can be leveraged in your own projects.
+    https://www.assetstore.unity3d.com/en/#!/content/74050
+    https://www.assetstore.unity3d.com/en/#!/content/56353
+    https://github.com/Microsoft/xbox-live-unity-plugin
+    </p>
+
+    <p>
+    A simple example of an appropriate use case for using a plugin would be to get the camera feed for a target device.  In Unity, your monobehaviour might make a generic call to GetCamera() but the plugin is authored in such a way that on an IOS device a swift library is used, on an Android device a java library is used, and on Hololens device a c# library is used.  The heavy lifting here is accomplished using  a wide variety of preprocessor directives and structuring your platform specific code in a plugins folder that Unity can understand.
+    https://docs.unity3d.com/Manual/PlatformDependentCompilation.html
+    </p>
+
+    <p>
+    When authoring a Unity plugin, it is important to setup your various project layouts correctly.  Once in the editor, Unity has a set of conventions it expects to be followed.  Most importantly, all plugin code needs to be in a folder called “Plugins” under the root “Assets” folder.  Additionally, platform specific versions of libraries can be placed in appropriate folders: ex. Assets/Plugins/WSA for windows store app specific dlls.
+    </p>
+
+    <p>
+    Visual Studio Plugin Project (platform specific plugin authoring)
+    </p>
+
+    <p>
+    Create a new project in Visual Studio: Visual C#, Windows Universal, Class Library with .NET 4.6 - this is for your plugin code
+    Important: Verify that the nuget package for .NET core is the correct version (currently, Unity generates a 5.0.0 project but the latest is 5.3.3)
+    Place your plugin code files in this project
+    Create a second new project in Visual Studio: Visual C#, Classic Desktop, Class Library with .NET 3.5 - this will be a shadow project for stubs and to check compilation on other platforms and older apis (such as the Unity editor)
+    Add existing files (from the other project) to this project to check for compilation issues
+    </p>
+
+    <p>
+    Set the build architecture to “Any CPU”
+    In the 3.5 project, set the namespace and assembly name to the match what is in the 4.6 project
+    Set the build path of the projects to output libraries - this will usually be a relative path outside of the .NET project and into a Unity project
+    For the 4.6 project, output the dll into the directory: /Assets/Plugins/WSA
+    For the 3.5 project, output the dll into the directory: /Assets/Plugins
+    </p>
+
+    <p>
+    As a quick test you can conditionally compile in the .NET Tasks library
+    In the 4.6 project open up your plugin file and at the top add the following code
+    #if NETFX_CORE
+    using System.Threading.Tasks;
+    #endif
+    Since the 4.6 profile includes NETFX_CORE, this code will show up with the correct formatting
+    In the 3.5 project, open up the same “referenced” file
+    Since the 3.5 profile does not include NETFX_CORE, this code will show up as commented out
+    </p>
+
+
+    <p>
+    Unity Application Project (consumes/bootstraps plugin)
+    </p>
+
+    <p>
+    After your plugin has been built and output to Unity, a few more settings inside the Unity project must be set
+    Select the dll output into the root “Plugins” folder - this is the placeholder dll
+    Using the Plugin Inspector, uncheck “Any Platform” and select the desired platforms to use this placeholder dll in (all platforms checked but WSAPlayer)
+    Using the Plugin Inspector, check the “Don’t Process” checkbox
+    Select the dll output into the “Plugins/WSA” folder - this is the platform dll
+    Using the Plugin Inspector, check only the desired platform to use this dll (only WSAPlayer)
+    In the “Placeholder” drop down, select Assets > Plugins > My.dll (whatever the root dll is called)
+    </p>
+
+
+    <p>
+    Visual Studio Output Project (generated for final application)
+    Verify any nuget packages and version numbers in the final generated project
+    </p>
+
+
+    <p>
+    Here is a sample project using the WebRTC for UWP library inside a Unity plugin for use on a HoloLens device:
+    https://github.com/DanAndersen/webrtc-hololens-unity-docs - documentation
+    https://github.com/DanAndersen/WSAUnity - the plugin project for Visual Studio
+    https://github.com/DanAndersen/WinPluginTest - the Unity project consuming the plugin output by the above project
+    </p>
+
+
+    <p>
+    Here are a few video resources to get you started:
+    https://channel9.msdn.com/Blogs/2p-start/Combining-Windows-10-features-with-Unity-games-in-your-own-plugin
+    https://unity3d.com/learn/tutorials/topics/scripting/writing-plugins
+    </p>
+
+    <div class="pb-6 gap"></div>
+  </div>
+</main>
