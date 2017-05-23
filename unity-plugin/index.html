@@ -28,11 +28,11 @@ layout: dcc
 
     <img src="img/unity-plugin-hololens.png" alt title="Creating Unity3D Plugins for HoloLens">
 
-
-
     <p>
     One question I keep encountering is “how do I make a plugin in Unity?”  To address it I decided to document some of my findings in this plugin primer.  First, I'll define what a Unity plugin is and is not.  Next, I'll show some examples of existing Unity plugins.  Finally, I'll wrap up with a simple step-by-step setup of a plugin project in Visual Studio that outputs into a Unity application project.
     </p>
+
+    <h2 class="h3">What is a plugin?</h2>
 
     <p>
     Essentially, a Unity plugin is a way to use platform specific code and libraries within your Unity applications.  They come in two flavors: <a href="https://docs.unity3d.com/Manual/UsingDLL.html">managed plugins</a> which only use a subset of the .NET apis and <a href="https://docs.unity3d.com/Manual/NativePlugins.html">native plugins</a> which commonly interface directly with platform specific apis or sdks.  Typically, you’re either consuming someone else’s plugin (such as the Vuforia plugin in the Unity Asset Store) or authoring your own.  In some unique cases, you might be both consuming other developer’s plugins and authoring your own plugin within the same Unity project.
@@ -40,6 +40,9 @@ layout: dcc
 
     <p>
     Alternatively, a Unity plugin is not a quick and easy way to slam breaking nuget packages into all of your platforms.  However - with a bit of care and planning - setting up, authoring, and consuming plugins in Unity is simple and relatively straightforward!
+    </p>
+
+    <h2 class="h3">Plugin Examples</h2>
 
     <p>
     For reference, a few good examples of existing Unity Plugins are <a href="https://www.assetstore.unity3d.com/en/#!/content/74050">Vuforia</a>, <a href="https://www.assetstore.unity3d.com/en/#!/content/56353">AV Pro</a>, and the <a href="https://github.com/Microsoft/xbox-live-unity-plugin">Xbox Live plugin</a>.  These plugins have different native platform libraries that enabled depending on the platforms capabilities.  You can even take a peak at how they output their code and libraries either by installing the plugin directly into a project or through the viewer on the asset store.  The Xbox Live plugin also has a good example of help documentation and build scripts that can be leveraged in your own projects.
@@ -48,6 +51,8 @@ layout: dcc
     <p>
     A simple example of an appropriate use case for using a plugin would be to get the camera feed for a target device.  In Unity, your monobehaviour might make a generic call to GetCamera() but the plugin is authored in such a way that on an IOS device a swift library is used, on an Android device a java library is used, and on Hololens device a c# library is used.  The heavy lifting here is accomplished using <a href="https://docs.unity3d.com/Manual/PlatformDependentCompilation.html">a wide variety of preprocessor directives</a> and structuring your platform specific code in a plugins folder that Unity can understand.
     </p>
+
+    <h2 class="h3">Authoring and Consuming Plugins</h2>
 
     <p>
     When authoring a Unity plugin, it is important to setup your various project layouts correctly.  Once in the editor, Unity has a set of conventions it expects to be followed.  Most importantly, all plugin code needs to be in a folder called “Plugins” under the root “Assets” folder.  Additionally, platform specific versions of libraries can be placed in appropriate folders: ex. Assets/Plugins/WSA for windows store app specific dlls.
@@ -118,6 +123,7 @@ layout: dcc
     1) Verify any nuget packages and version numbers in the final generated project
     </p>
 
+    <h2 class="h3">Resources</h2>
 
     <p>
     Here is a sample project I came across while doing my research.  It uses the WebRTC for UWP library inside a Unity plugin for use on a HoloLens device:
