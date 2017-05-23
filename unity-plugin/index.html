@@ -3,6 +3,7 @@ layout: dcc
 ---
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css" rel="stylesheet" />
 <style>
   body { font-family: 'Open Sans', sans-serif; }
   .videoWrapper {
@@ -25,9 +26,9 @@ layout: dcc
     <h1 class="h2">Creating Plugins for Unity3D</h1>
     <h2 class="h3"></h2>
 
-    <p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/DfRYLwG1Bug" frameborder="0" allowfullscreen></iframe>
-    </p>
+    <img src="img/unity-plugin-hololens.png" alt title="Creating Unity3D Plugins for HoloLens">
+
+
 
     <p>
     One question I keep encountering is “how do I make a plugin in Unity?”  To address it I decided to document some of my findings in this plugin primer.  First, I'll define what a Unity plugin is and is not.  Next, I'll show some examples of existing Unity plugins.  Finally, I'll wrap up with a simple step-by-step setup of a plugin project in Visual Studio that outputs into a Unity application project.
@@ -74,9 +75,13 @@ layout: dcc
     In the 4.6 project open up your plugin file and at the top add the following code:</br>
     </br>
     </br>
+    <pre>
+      <code>
     #if NETFX_CORE
     using System.Threading.Tasks;
     #endif
+      </code>
+    </pre>
     </br>
     </br>
 
@@ -128,9 +133,15 @@ layout: dcc
     </p>
 
     <p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/DfRYLwG1Bug" frameborder="0" allowfullscreen></iframe>
+    </p>
+
+    <p>
       <iframe src="https://channel9.msdn.com/Blogs/2p-start/Combining-Windows-10-features-with-Unity-games-in-your-own-plugin/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
     </p>
 
     <div class="pb-6 gap"></div>
   </div>
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
