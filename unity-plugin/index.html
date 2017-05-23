@@ -54,8 +54,8 @@ layout: dcc
     </p>
 
     <h2 class="h4">Visual Studio Plugin Project (platform specific plugin authoring)</h2>
+    <h2 class="h5">Project Settings</h2>
     <p>
-
     1) Create a new project in Visual Studio: Visual C#, Windows Universal, Class Library with .NET 4.6 - this is for your plugin code</br>
     2) Important: Verify that the nuget package for .NET core is the correct version (currently, Unity generates a 5.0.0 project but the latest is 5.3.3)</br>
     3) Place your plugin code files in this project</br>
@@ -70,19 +70,20 @@ layout: dcc
     </ol> -->
     </p>
 
+    <h2 class="h5">Build Settings</h2>
     <p>
-    Set the build architecture to “Any CPU”</br>
-    In the 3.5 project, set the namespace and assembly name to the match what is in the 4.6 project</br>
-    Set the build path of the projects to output libraries - this will usually be a relative path outside of the .NET project and into a Unity project</br>
-    For the 4.6 project, output the dll into the directory: /Assets/Plugins/WSA</br>
-    For the 3.5 project, output the dll into the directory: /Assets/Plugins</br>
+    1) Set the build architecture to “Any CPU”</br>
+    2) In the 3.5 project, set the namespace and assembly name to the match what is in the 4.6 project</br>
+    3) Set the build path of the projects to output libraries - this will usually be a relative path outside of the .NET project and into a Unity project</br>
+    4) For the 4.6 project, output the dll into the directory: /Assets/Plugins/WSA</br>
+    5) For the 3.5 project, output the dll into the directory: /Assets/Plugins</br>
     </p>
 
+    <h2 class="h5">Development + Testing</h2>
     <p>
-    As a quick test you can conditionally compile in the .NET Tasks library</br>
-    In the 4.6 project open up your plugin file and at the top add the following code:</br>
-    </br>
-    </br>
+    1) As a quick test you can conditionally compile in the .NET Tasks library</br>
+    2) In the 4.6 project open up your plugin file and at the top add the following code:</br>
+
     <pre>
       <code class="language-csharp">
     #if NETFX_CORE
@@ -93,27 +94,28 @@ layout: dcc
     </br>
     </br>
 
-    Since the 4.6 profile includes NETFX_CORE, this code will show up with the correct formatting</br>
-    In the 3.5 project, open up the same “referenced” file</br>
-    Since the 3.5 profile does not include NETFX_CORE, this code will show up as commented out</br>
+    3) Since the 4.6 profile includes NETFX_CORE, this code will show up with the correct formatting</br>
+    4) In the 3.5 project, open up the same “referenced” file</br>
+    5) Since the 3.5 profile does not include NETFX_CORE, this code will show up as commented out</br>
     </p>
 
     <h2 class="h4">Unity Application Project (consumes/bootstraps plugin)</h2>
+    <h2 class="h5">Project Settings</h2>
     <img src="https://docs.unity3d.com/uploads/Main/PluginInspector.png" alt title="Sample Plugin Inspector View" />
     <p>
-    After your plugin has been built and output to Unity, a few more settings inside the Unity project must be set</br>
-    Select the dll output into the root “Plugins” folder - this is the placeholder dll</br>
-    Using the <a href="https://docs.unity3d.com/Manual/PluginInspector.html">Plugin Inspector</a>, uncheck “Any Platform” and select the desired platforms to use this placeholder dll in (all platforms checked but WSAPlayer)</br>
-    Using the Plugin Inspector, check the “Don’t Process” checkbox</br>
-    Select the dll output into the “Plugins/WSA” folder - this is the platform dll</br>
-    Using the Plugin Inspector, check only the desired platform to use this dll (only WSAPlayer)</br>
-    In the “Placeholder” drop down, select Assets > Plugins > My.dll (whatever the root dll is called)</br>
+    1) After your plugin has been built and output to Unity, a few more settings inside the Unity project must be set</br>
+    2) Select the dll output into the root “Plugins” folder - this is the placeholder dll</br>
+    3) Using the <a href="https://docs.unity3d.com/Manual/PluginInspector.html">Plugin Inspector</a>, uncheck “Any Platform” and select the desired platforms to use this placeholder dll in (all platforms checked but WSAPlayer)</br>
+    4) Using the Plugin Inspector, check the “Don’t Process” checkbox</br>
+    5) Select the dll output into the “Plugins/WSA” folder - this is the platform dll</br>
+    6) Using the Plugin Inspector, check only the desired platform to use this dll (only WSAPlayer)</br>
+    7) In the “Placeholder” drop down, select Assets > Plugins > My.dll (whatever the root dll is called)</br>
     </p>
 
 
     <h2 class="h4">Visual Studio Output Project (generated for final application)</h2>
     <p>
-    Verify any nuget packages and version numbers in the final generated project
+    1) Verify any nuget packages and version numbers in the final generated project
     </p>
 
 
