@@ -55,11 +55,13 @@ layout: dcc
 
     <h2 class="h4">Visual Studio Plugin Project (platform specific plugin authoring)</h2>
     <p>
-    Create a new project in Visual Studio: Visual C#, Windows Universal, Class Library with .NET 4.6 - this is for your plugin code</br>
-    Important: Verify that the nuget package for .NET core is the correct version (currently, Unity generates a 5.0.0 project but the latest is 5.3.3)</br>
-    Place your plugin code files in this project</br>
-    Create a second new project in Visual Studio: Visual C#, Classic Desktop, Class Library with .NET 3.5 - this will be a shadow project for stubs and to check compilation on other platforms and older apis (such as the Unity editor)</br>
-    Add existing files (from the other project) to this project to check for compilation issues</br>
+      <ol>
+        <li>Create a new project in Visual Studio: Visual C#, Windows Universal, Class Library with .NET 4.6 - this is for your plugin code</li>
+        <li>Important: Verify that the nuget package for .NET core is the correct version (currently, Unity generates a 5.0.0 project but the latest is 5.3.3)</li>
+        <li>Place your plugin code files in this project</li>
+        <li>Create a second new project in Visual Studio: Visual C#, Classic Desktop, Class Library with .NET 3.5 - this will be a shadow project for stubs and to check compilation on other platforms and older apis (such as the Unity editor)</li>
+        <li>Add existing files (from the other project) to this project to check for compilation issues</li>
+      </ol>
     </p>
 
     <p>
