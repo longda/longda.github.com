@@ -56,6 +56,25 @@ layout: dcc
     <iframe width="640" height="360" src="https://www.youtube.com/embed/Ko6mpTmPeA8?showinfo=0" frameborder="0" allowfullscreen></iframe>
     </div>
 
+    <p>
+      In this project, we required to build a basic augmented reality system using corner markers and handle some real life cases such as
+      camera rotation and skew as well as video noise and artifacts.
+    </p>
+    <p>
+      To start, we injected basic still frames into the video with a calculated homography to ensure the process worked correctly but the
+      extra credit version required interleaving of frames from a video into the marker locations.
+    </p>
+    <p>
+      To achieve this, I used fastNlMeansDenoising to remove any static noise and then GaussianBlur on the result to remove circle artifacts.
+    </p>
+    <p>
+      Harris corners were used to estimate marker locations and those results were fed into KMeans with a K = 4 to identify the corners.
+    </p>
+    <p>
+      These four points were then used to compute a homography matrix using least squares and the injected image was then inverse warped into
+      the final frame to avoid holes or strange artifacts in the output.
+    </p>
+
     <div class="pb-6 gap"></div>
     <div class="videoWrapper">
     <iframe width="640" height="360" src="https://www.youtube.com/embed/68OAv5YIVHU?showinfo=0" frameborder="0" allowfullscreen></iframe>
