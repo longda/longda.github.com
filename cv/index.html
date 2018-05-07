@@ -57,15 +57,15 @@ layout: dcc
     </div>
 
     <p>
-      In this project, we required to build a basic augmented reality system using corner markers and handle some real life cases such as
-      camera rotation and skew as well as video noise and artifacts.
+      In this project, students were required to build a basic augmented reality system using corner markers and handle some real life cases such as
+      camera rotation/skew as well as video artifacts and noise.
     </p>
     <p>
       To start, we injected basic still frames into the video with a calculated homography to ensure the process worked correctly but the
-      extra credit version required interleaving of frames from a video into the marker locations.
+      extra credit version extended this technique by interleaving frames from a video into the marker locations.
     </p>
     <p>
-      To achieve this, I used fastNlMeansDenoising to remove any static noise and then GaussianBlur on the result to remove circle artifacts.
+      To achieve this, I used non-local means denoising to remove any static noise and then Gaussian blurred the result to remove circle artifacts.
     </p>
     <p>
       Harris corners were used to estimate marker locations and those results were fed into KMeans with a K = 4 to identify the corners.
