@@ -106,92 +106,12 @@ layout: dcc
     <iframe width="640" height="360" src="https://www.youtube.com/embed/-_5TUiOtAjs?showinfo=0" frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <!-- <img src="img/object-pool.png" alt title="The object pool I created">
-
     <p>
-      As part of an exploration into game development patterns and techniques with Unity3D, I built out a basic demo of an object pool that I could try out on my laptop and phone.
+      In this assignment we implemented standard and hierarchical versions of optical flow based on the Lucas Kanade algorithm and papers.
     </p>
     <p>
-      For this example, I used the Cat Like Coding Object Pool Tutorial as a base to work from and pulled some simple assets out of the store to use as placeholders.
+      For extra credit, we visualized the algorithm results with quiver plots overlayed on video frames.
     </p>
-    <p>
-      The basic setup of the demo is to create a fountain of objects with physics by arranging spawners in a ring and launching prefabs onto a sphere in the center.  As objects fall off the sphere, they hit a kill zone underneath which returns the object to the pool.
-    </p>
-    <p>
-      Leveraging this technique I was able to maintain fairly smooth frame rates of over 30 FPS without any garbage collection issues or dropped frames.  I even pushed a build to my iPhone 6 and experienced very good results running the simple app for over 10 mins.
-    </p>
-
-    <h2 class="h3">What is an object pool?</h2>
-    <p>
-      An object pool is a design pattern that allows you to pre-allocate a reusable set of objects in advance rather than creating and destroying them right before they are needed.
-    </p>
-    <p>
-      As new objects are required, they are requested from the pool and, if available, one is returned immediately.  In the case that one is not available, more objects are allocated to the pool in a sensible manner and one is returned from this newly allocated set.
-    </p>
-    <p>
-      When objects are no longer needed, they are returned to the pool to be reused for future requests without the allocation overhead.
-    </p>
-
-    <div class="videoWrapper">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/5VdCI0vXmfM?showinfo=0" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <h2 class="h3">How are object pools useful?</h2>
-    <p>
-      Object pools are commonly used to improve performance and memory use in situations where initializing an object can be costly.
-    </p>
-    <p>
-      Video games, simulations, and virtual reality experiences are all prime candidates for this pattern due to demanding requirements for maintaining high frame rates.  This becomes even more of a challenge on mobile where resources are tightly constrained.
-    </p>
-    <p>
-      Filling these pools during loading screens or in parallel across frames rather than blocking to make the allocations is a bit of an art, but there are scenarios where the whole thing can be allocated at once.  Some developers even go as far as pre-allocating all the memory their application will need in advance to avoid any hiccups due to garbage collection. <sup><a href="#fn1" id="ref1">1</a></sup>
-    </p>
-
-    <img src="img/object-pool-profiler.png" alt title="A sample profile run of my object pool">
-
-    <h2 class="h3">What is one way to implement an object pool?</h2>
-    <p>
-      Implementing a basic object pool is fairly simple.  One way is to define a reference in your class for the pool this object belongs to.
-    </p>
-    <p>
-      Rather than destroy this object, implement a method that returns this object to its pool.  This can be tracked with a simple boolean flag on the object or leveraging something build into your framework, such as using SetActive() in Unity3D.
-    </p>
-    <p>
-      The pool is just a collection of object instances and an index can be maintained to keep track of remaining supply in the pool.  At some point, either when the pool is exhausted or passes some usage threshold, add more objects to the pool and update the index.
-    </p>
-    <p>
-      The last detail is calling and knowing when to call the return to pool method in your specific application.
-    </p>
-
-    <h2 class="h3">What are some common things to watch out for?</h2>
-    <p>
-      There are a few considerations to be aware when implementing object pools.  Caution should be exercised when resetting the objects in the pool for reuse so that objects are given from the pool in an expected state and sensitive information from the previous use of the object is not exposed.
-    </p>
-    <p>
-      Additionally, take care with empty pool scenarios and have a plan in place for replenishing the pool and ultimately throwing an exception when an upper bound has been hit.
-    </p>
-
-    <h2 class="h3">Where can I find examples of this pattern in practice?</h2>
-    <p>
-      Object pools are used all over the place in most major frameworks.  Connection pools, thread pools, and even pools for large, commonly used graphics objects such as fonts and bitmaps are implemented with reasonable defaults that can be tuned later by the developer based on actual usage statistics.
-    </p>
-    <p>
-      I would even go as far as to say that the expandable collections underlying the StringBuilder and generic List classes in .Net are special case implementations of this pattern, especially when used with the Clear() method for reuse.
-    </p>
-
-    <h2 class="h3">Footnotes</h2>
-    <p>
-      <sup id="fn1">1. Playdead talks about how they allocate the entire 400 MB of memory required up front.  Additionally, they use a modified version of the Unity engine which changes the garbage collection algorithm to collect less frequently.  <a href="https://www.youtube.com/watch?v=mQ2KTRn4BMI">Unite 2016 - Tools, Tricks and Technologies for Reaching Stutter Free 60 FPS in INSIDE</a></sup>
-    </p>
-
-    <h2 class="h3">Further Reading</h2>
-    <p>
-      <ul>
-        <li><a href="http://catlikecoding.com/unity/tutorials/object-pools/">Cat Like Coding's Object Pool Tutorial</a></li>
-        <li><a href="http://gameprogrammingpatterns.com/object-pool.html">Game Programming Pattern's Object Pool Design Pattern</a></li>
-        <li><a href="https://unity3d.com/learn/tutorials/topics/scripting/object-pooling">Unity3D's Object Pooling Tutorial</a></li>
-      </ul>
-    <p> -->
 
     <div class="pb-6 gap"></div>
   </div>
