@@ -38,12 +38,17 @@ layout: dcc
       and then search through input frames for positive identification.
     </p>
     <p>
-        Each frame, a number of steps are completed including feature extraction and matching, homograpy estimation and refinement, and pose estimation
-        based on a known camera calibration.
+      Each frame, a number of steps are completed including feature extraction and matching, homography estimation and refinement, and pose estimation
+      based on a known camera calibration.
     </p>
     <p>
-
+      A few of the computer vision methods used in the project are ORB feature detection, KNN feature matching using a brute force matcher with cross correlation,
+      homography estimation using RANSAC, SolvePNP() with Levenberg-Marquardt optimization, and conversion of the rotation matrix to a vector using
+      Rodrigues.
     </p>
+    <!-- <p>
+
+    </p> -->
 
 
     <h2 class="h3">Augmented Reality</h2>
