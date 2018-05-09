@@ -72,6 +72,7 @@ layout: dcc
       The final artifact is animate gif combining 40 images take from the base of the pylon taken manually over the course of about 15 minutes.
     </p>
 
+
     <h2 class="h3">Camera Obscura</h2>
     <img src="img/camera_obscura_01.png" alt title="Camera Obscura Ingredients">
     <div class="pb-6 gap"></div>
@@ -86,6 +87,7 @@ layout: dcc
       As a reference, I visited a variety of <a href="http://www.griffithobservatory.org/exhibits/halloftheeye_cameraobscura.html">local</a> camera <a href="https://www.atlasobscura.com/places/camera-obscura-santa-monica">obscura</a> installations around Los Angeles as well as an <a href="http://www.abelardomorell.net/project/tent-camera/">Abelardo Morell</a> exhibit.
     </p>
 
+
     <h2 class="h3">Blending</h2>
     <img src="img/blending_01.png" alt title="Blending Ingredients">
     <div class="pb-6 gap"></div>
@@ -93,7 +95,7 @@ layout: dcc
     <div class="pb-6 gap"></div>
     <img src="img/blending_02.png" alt title="Blending Fun Results">
     <p>
-      The code is based on a concept called <a href="https://en.wikipedia.org/wiki/Pyramid_%28image_processing%29">"image pyramids"</a> which are used in a wide variety of applications such as computer vision (<a href="https://en.wikipedia.org/wiki/Optical_flow">optical flow</a>), image processing (blending), and even image compression.
+      The code for this project is based on a concept called <a href="https://en.wikipedia.org/wiki/Pyramid_%28image_processing%29">"image pyramids"</a> which are used in a wide variety of applications such as computer vision (<a href="https://en.wikipedia.org/wiki/Optical_flow">optical flow</a>), image processing (blending), and even image compression.
     </p>
     <p>
       After a tiny bit of research, I also found out it's used as the basis for <a href="https://en.wikipedia.org/wiki/Mipmap">mipmaps</a>, a common technique used in games and simulations for texturing because it can speed up rendering and reduce artifacts such as aliasing.  As an example, mipmaps are a <a href="https://docs.unity3d.com/Manual/class-TextureImporter.html">feature</a> of Unity3D and other game engines.
@@ -123,7 +125,7 @@ layout: dcc
       For example, this technique is used in professional image processing software, such as Photoshop.
     </p>
     <p>
-      This technique is largely based on the commonly cited paper from the 1980s: Burt and Adelson, “A multiresolution spline with application to image mosaics”. In ACM Transactions on Graphics, 2 (4). 1983.
+      This technique is largely based on the commonly cited computer vision paper from the 1980s: Burt and Adelson, “A multiresolution spline with application to image mosaics”. In ACM Transactions on Graphics, 2 (4). 1983.
     </p>
 
 
@@ -133,14 +135,32 @@ layout: dcc
     <img src="img/pano_02.jpg" alt title="Panorama 2 Result">
     <div class="pb-6 gap"></div>
     <img src="img/pano_03.jpg" alt title="Panorama 3 Result">
+    <p>
+      In this project, I used some of the built in tools in OpenCV to build a pipeline to detect features and compute homographies in order to warp images and create panoramas.
+    </p>
+    <p>
+      As an extension, I would like to implement Poisson blending and get a better handle on the built in image stiching pipeline.
+    </p>
 
     <h2 class="h3">HDR</h2>
     <img src="img/hdr_01.png" alt title="HDR Ingredients">
     <div class="pb-6 gap"></div>
     <img src="img/hdr_output.png" alt title="HDR Result">
+    <p>
+      <a href="https://en.wikipedia.org/wiki/High-dynamic-range_imaging">High dynamic range</a> (HDR) images are an interesting way to capture more details in
+      a scene than is typically possible by taking multiple images at different exposures and combining the results.
+    </p>
+    <p>
+      For this project, I implemented the radiance map technique discussed in "Recovering High Dynamic Range Radiance
+      Maps from Photographs", by Debevec & Malik.
+    </p>
+
 
     <h2 class="h3">Video Textures</h2>
     <img src="img/video_texture_01.png" alt title="Video Texture Energy">
+    <p>
+      Video textures are a way to generate seemingly infinitely looping gifs or videos by computing the similarity of frames within an input video.
+    </p>
 
 
     <h2 class="h3">Midterm Project: Seam Carving</h2>
@@ -151,6 +171,9 @@ layout: dcc
     <img src="img/seam_carving_total_energy.png" alt title="Seam Carving Total Energy">
     <div class="pb-6 gap"></div>
     <img src="img/seam_carving_01.png" alt title="Seam Carving :: Seam to Remove">
+    <p>
+      <a href="https://www.youtube.com/watch?v=gfV65xLo87s">Seam Carving</a> [Avidan 2007] is an image resizing technique which computes energy within a source image and presents a unique algorithm to minimize a path through the image, either horizontally or vertically, effectively converting this challenge into a minimization problem.
+    </p>
 
 
     <h2 class="h3">Drone Photography</h2>
@@ -159,7 +182,6 @@ layout: dcc
     </div>
     <div class="pb-6 gap"></div>
     <img src="img/over_the_sea.jpg" alt title="Over the Sea :: Drone Shot">
-
 
 
     <div class="pb-6 gap"></div>
