@@ -79,5 +79,5 @@ function animate() {
 }
 
 function render() {
-  composer.render();
+  composer.render(delta);
 }
