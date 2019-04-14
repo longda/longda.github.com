@@ -12,6 +12,7 @@ var height = window.innerHeight || 2;
 var halfWidth = width / 2;
 var halfHeight = height / 2;
 var delta = 0.01;
+var controls;
 
 init();
 animate();
@@ -28,7 +29,7 @@ function init() {
   camera.position.z = 400;
 
   // controls
-  var controls = new THREE.OrbitControls( camera );
+  controls = new THREE.OrbitControls( camera );
   controls.enablePan = false;
   controls.enableZoom = false;
 
