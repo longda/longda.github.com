@@ -42,6 +42,8 @@ function init() {
       depthTest: false
     } );
 
+  materialColor.transparent = true;
+
   quadBG = new THREE.Mesh( new THREE.PlaneBufferGeometry( 1, 1 ), materialColor );
   quadBG.position.z = - 500;
   quadBG.scale.set( width, height, 1 );
@@ -52,7 +54,7 @@ function init() {
   composer.addPass( new THREE.RenderPass( scene, camera ) );
 
   // shader passes
-  var effectFilm = new THREE.FilmPass( 0.35, 0.025, 648, false );
+  var effectFilm = new THREE.FilmPass( 0.35, 0.025, 2048, false );
   composer.addPass(effectFilm);
 
   // stats
