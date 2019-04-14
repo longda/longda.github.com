@@ -54,7 +54,7 @@ function init() {
   composer.addPass( new THREE.RenderPass( scene, camera ) );
 
   // shader passes
-  var effectFilm = new THREE.FilmPass( 0.35, 0.025, 2048, false );
+  var effectFilm = new THREE.FilmPass( 0.35, 0.5, 2048, false );
   composer.addPass(effectFilm);
 
   // stats
