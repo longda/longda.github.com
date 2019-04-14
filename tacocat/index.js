@@ -27,6 +27,11 @@ function init() {
   camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
   camera.position.z = 400;
 
+  // controls
+  var controls = new THREE.OrbitControls( camera );
+  controls.enablePan = false;
+  controls.enableZoom = false;
+
   // scenes
   scene = new THREE.Scene();
 
@@ -74,6 +79,7 @@ function onWindowResize() {
 function animate() {
   requestAnimationFrame( animate );
   stats.begin();
+  controls.update();
   render();
   stats.end();
 }
