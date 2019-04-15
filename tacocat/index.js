@@ -70,15 +70,15 @@ function init() {
     var xMid, text;
 		var color = 0xffffff;
 
-		var matDark = new THREE.LineBasicMaterial( {
-			color: color,
-			side: THREE.DoubleSide
-		} );
+		// var matDark = new THREE.LineBasicMaterial( {
+		// 	color: color,
+		// 	side: THREE.DoubleSide
+		// } );
 
 		var matLite = new THREE.MeshBasicMaterial( {
 			color: color,
 			transparent: true,
-			opacity: 0.4,
+			opacity: 0.8,
 			side: THREE.DoubleSide
 		} );
 
