@@ -93,8 +93,8 @@ function animate() {
   requestAnimationFrame( animate );
   stats.begin();
   controls.update();
-  console.log("az angle:", controls.getAzimuthalAngle());
-  console.log("polar angle:", controls.getPolarAngle());
+  // console.log("az angle:", controls.getAzimuthalAngle());
+  // console.log("polar angle:", controls.getPolarAngle());
   render();
   stats.end();
 }
