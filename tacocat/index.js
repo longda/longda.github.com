@@ -95,6 +95,24 @@ function init() {
     scene.add( text );
   });
 
+  // stars
+  if (true) {
+    var x_min = -1000;
+    var x_max = 1000;
+    var y_min = -800;
+    var y_max = 800;
+    var z_min = -1000;
+    var z_max = -550;
+    var g = new THREE.PlaneGeometry();
+    var m = new THREE.MeshBasicMaterial({color: 0xffffff, transparent: true});
+
+    for (var i = 0; i < 50; i++) {
+      var p = new THREE.Mesh(g, m);
+      p.position.set(Math.randInt(x_min, x_max), Math.randInt(y_min, y_max), Math.randInt(z_min, z_max));
+      scene.add(p);
+    }
+  }
+
   // post processing
   composer = new THREE.EffectComposer( renderer );
   composer.addPass( new THREE.RenderPass( scene, camera ) );
