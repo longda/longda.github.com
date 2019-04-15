@@ -33,11 +33,11 @@ function init() {
   controls.enablePan = false;
   controls.enableZoom = false;
   controls.enableDamping = true;
-  controls.dampingFactor = 20;
-  // controls.maxAzimuthAngle = 0.5;
-  // controls.maxPolarAngle = 0.5;
-  // controls.minAzimuthAngle = 0.5;
-  // controls.minPolarAngle = 0.5;
+  controls.dampingFactor = 0.0004;
+  controls.maxAzimuthAngle = Math.PI / 10;
+  controls.maxPolarAngle = Math.PI / 10;
+  controls.minAzimuthAngle = -Math.PI / 10;
+  controls.minPolarAngle = -Math.PI / 10;
 
 
   // scenes
@@ -67,6 +67,9 @@ function init() {
   composer.addPass( new THREE.RenderPass( scene, camera ) );
 
   // shader passes
+  var effectBloom = new THREE.BloomPass( 0.5 );
+  composer.addPass(effectBloom);
+
   var effectFilm = new THREE.FilmPass( 0.35, 0.5, 2048, false );
   composer.addPass(effectFilm);
 
