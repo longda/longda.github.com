@@ -64,6 +64,36 @@ function init() {
   scene.add( quadBG );
   controls.target = quadBG.position;
 
+  // text
+  var loader = new THREE.FontLoader();
+  loader.load('fonts/helvetiker_regular.typeface.json', function(font) {
+    var xMid, text;
+		var color = 0xffffff;
+
+		var matDark = new THREE.LineBasicMaterial( {
+			color: color,
+			side: THREE.DoubleSide
+		} );
+
+		var matLite = new THREE.MeshBasicMaterial( {
+			color: color,
+			transparent: true,
+			opacity: 0.4,
+			side: THREE.DoubleSide
+		} );
+
+    var message = "TACOCAT INTERACTIVE";
+    var shapes = font.generateShapes( message, 100 );
+    var geometry = new THREE.ShapeBufferGeometry( shapes );
+    geometry.computeBoundingBox();
+    xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
+    geometry.translate( xMid, 0, 0 );
+    // make shape ( N.B. edge view not visible )
+    text = new THREE.Mesh( geometry, matLite );
+    text.position.z = - 150;
+    scene.add( text );
+  });
+
   // post processing
   composer = new THREE.EffectComposer( renderer );
   composer.addPass( new THREE.RenderPass( scene, camera ) );
