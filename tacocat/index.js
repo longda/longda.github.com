@@ -34,10 +34,10 @@ function init() {
   controls.enableZoom = false;
   controls.enableDamping = true;
   controls.dampingFactor = 0.25;
-  // controls.maxAzimuthAngle = 0.01;
-  //controls.maxPolarAngle = Math.PI / 4;
-  // controls.minAzimuthAngle = -0.01;
-  //controls.minPolarAngle = Math.PI / 4;
+  controls.maxAzimuthAngle = 0.05;
+  controls.maxPolarAngle = 1.6;
+  controls.minAzimuthAngle = -0.05;
+  controls.minPolarAngle = 1.4;
   controls.rotateSpeed = 0.1;
 
 
