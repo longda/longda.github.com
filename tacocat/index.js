@@ -32,12 +32,12 @@ function init() {
   controls = new THREE.OrbitControls( camera );
   controls.enablePan = false;
   controls.enableZoom = false;
-  controls.enableDamping = true;
-  controls.dampingFactor = 100000;
-  // controls.maxAzimuthAngle = Math.PI / 10;
-  // controls.maxPolarAngle = Math.PI / 10;
-  // controls.minAzimuthAngle = -Math.PI / 10;
-  // controls.minPolarAngle = -Math.PI / 10;
+  // controls.enableDamping = true;
+  // controls.dampingFactor = 100000;
+  controls.maxAzimuthAngle = 0.01;
+  controls.maxPolarAngle = 0.01;
+  controls.minAzimuthAngle = -0.01;
+  controls.minPolarAngle = -0.01;
 
 
   // scenes
