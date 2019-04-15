@@ -101,7 +101,7 @@ function init() {
     var x_max = 1000;
     var y_min = -800;
     var y_max = 800;
-    var z_min = -950;
+    var z_min = -900;
     var z_max = -550;
     var g = new THREE.PlaneGeometry(2, 2);
     var m = new THREE.MeshBasicMaterial({color: 0xffffff, transparent: true});
