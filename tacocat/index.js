@@ -29,16 +29,16 @@ function init() {
   camera.position.z = 400;
 
   // controls
-  // controls = new THREE.OrbitControls( camera );
-  // controls.enablePan = false;
-  // controls.enableZoom = false;
-  // // controls.enableDamping = true;
-  // // controls.dampingFactor = 100000;
+  controls = new THREE.OrbitControls( camera );
+  controls.enablePan = false;
+  controls.enableZoom = false;
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.25;
   // controls.maxAzimuthAngle = 0.01;
-  // controls.maxPolarAngle = 0.01;
+  controls.maxPolarAngle = Math.PI / 2;
   // controls.minAzimuthAngle = -0.01;
   // controls.minPolarAngle = -0.01;
-
+  controls.screenSpacePanning = false;
 
   // scenes
   scene = new THREE.Scene();
@@ -67,8 +67,8 @@ function init() {
   composer.addPass( new THREE.RenderPass( scene, camera ) );
 
   // shader passes
-  var effectBloom = new THREE.BloomPass( 0.5 );
-  composer.addPass(effectBloom);
+  // var effectBloom = new THREE.BloomPass( 0.5 );
+  // composer.addPass(effectBloom);
 
   var effectFilm = new THREE.FilmPass( 0.35, 0.5, 2048, false );
   composer.addPass(effectFilm);
