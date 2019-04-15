@@ -108,7 +108,7 @@ function init() {
 
     for (var i = 0; i < 50; i++) {
       var p = new THREE.Mesh(g, m);
-      p.position.set(Math.randInt(x_min, x_max), Math.randInt(y_min, y_max), Math.randInt(z_min, z_max));
+      p.position.set(THREE.Math.randInt(x_min, x_max), THREE.Math.randInt(y_min, y_max), THREE.Math.randInt(z_min, z_max));
       scene.add(p);
     }
   }
