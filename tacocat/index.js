@@ -14,6 +14,8 @@ var halfHeight = height / 2;
 var delta = 0.01;
 var controls;
 
+var stars = [];
+
 init();
 animate();
 
@@ -103,13 +105,18 @@ function init() {
     var y_max = 800;
     var z_min = 550;
     var z_max = 850;
+    var o_min = 0.2;
+    var o_max = 1.0;
+
     var g = new THREE.PlaneGeometry(2, 2);
     var m = new THREE.MeshBasicMaterial({color: 0xffffff, transparent: true});
 
     for (var i = 0; i < 1000; i++) {
+      m.opacity = THREE.Math.randFloat(o_min, o_max);
       var p = new THREE.Mesh(g, m);
       p.position.set(THREE.Math.randInt(x_min, x_max), THREE.Math.randInt(y_min, y_max), -THREE.Math.randInt(z_min, z_max));
       scene.add(p);
+      stars.add(p);
     }
   }
 
@@ -142,11 +149,16 @@ function animate() {
   requestAnimationFrame( animate );
   stats.begin();
   controls.update();
-  // console.log("az angle:", controls.getAzimuthalAngle());
-  // console.log("polar angle:", controls.getPolarAngle());
+  animateStars();
   render();
   stats.end();
 }
+
+function animateStars() {
+  for (var i = 0; i < stars.length; i++) {
+    //stars[i].materials[0].opacity = 
+  }
+};
 
 function render() {
   composer.render(delta);
