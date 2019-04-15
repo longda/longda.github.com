@@ -101,14 +101,14 @@ function init() {
     var x_max = 1000;
     var y_min = -800;
     var y_max = 800;
-    var z_min = -900;
-    var z_max = -550;
+    var z_min = 550;
+    var z_max = 850;
     var g = new THREE.PlaneGeometry(2, 2);
     var m = new THREE.MeshBasicMaterial({color: 0xffffff, transparent: true});
 
     for (var i = 0; i < 1000; i++) {
       var p = new THREE.Mesh(g, m);
-      p.position.set(THREE.Math.randInt(x_min, x_max), THREE.Math.randInt(y_min, y_max), THREE.Math.randInt(z_min, z_max));
+      p.position.set(THREE.Math.randInt(x_min, x_max), THREE.Math.randInt(y_min, y_max), -THREE.Math.randInt(z_min, z_max));
       scene.add(p);
     }
   }
