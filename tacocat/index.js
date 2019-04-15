@@ -90,7 +90,7 @@ function onWindowResize() {
 function animate() {
   requestAnimationFrame( animate );
   stats.begin();
-  controls.update();
+  if (controls) controls.update();
   render();
   stats.end();
 }
