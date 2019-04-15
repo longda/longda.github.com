@@ -66,7 +66,7 @@ function init() {
 
   // text
   var loader = new THREE.FontLoader();
-  loader.load('fonts/helvetiker_regular.typeface.json', function(font) {
+  loader.load('fonts/roboto_mono_bold.typeface.json', function(font) {
     var xMid, text;
 		var color = 0xffffff;
 
@@ -82,7 +82,7 @@ function init() {
 			side: THREE.DoubleSide
 		} );
 
-    var message = "TACOCAT INTERACTIVE";
+    var message = "TACOCAT\nINTERACTIVE";
     var shapes = font.generateShapes( message, 100 );
     var geometry = new THREE.ShapeBufferGeometry( shapes );
     geometry.computeBoundingBox();
@@ -90,6 +90,7 @@ function init() {
     geometry.translate( xMid, 0, 0 );
     // make shape ( N.B. edge view not visible )
     text = new THREE.Mesh( geometry, matLite );
+    text.position.y = - 100;
     text.position.z = - 150;
     scene.add( text );
   });
