@@ -97,13 +97,13 @@ function init() {
 
   // stars
   if (true) {
-    var x_min = -800;
-    var x_max = 800;
-    var y_min = -600;
-    var y_max = 600;
-    var z_min = -900;
-    var z_max = -500;
-    var g = new THREE.PlaneGeometry(10, 10);
+    var x_min = -1000;
+    var x_max = 1000;
+    var y_min = -800;
+    var y_max = 800;
+    var z_min = -1000;
+    var z_max = -550;
+    var g = new THREE.PlaneGeometry(2, 2);
     var m = new THREE.MeshBasicMaterial({color: 0xffffff, transparent: true});
 
     for (var i = 0; i < 1000; i++) {
