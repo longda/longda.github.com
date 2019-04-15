@@ -35,10 +35,11 @@ function init() {
   controls.enableDamping = true;
   controls.dampingFactor = 0.25;
   // controls.maxAzimuthAngle = 0.01;
-  controls.maxPolarAngle = Math.PI / 4;
+  //controls.maxPolarAngle = Math.PI / 4;
   // controls.minAzimuthAngle = -0.01;
-  controls.minPolarAngle = Math.PI / 4;
-  controls.screenSpacePanning = false;
+  //controls.minPolarAngle = Math.PI / 4;
+  controls.rotateSpeed = 0.1;
+
 
   // scenes
   scene = new THREE.Scene();
@@ -61,6 +62,7 @@ function init() {
   quadBG.position.z = - 500;
   quadBG.scale.set( width, height, 1 );
   scene.add( quadBG );
+  controls.target = quadBG.position;
 
   // post processing
   composer = new THREE.EffectComposer( renderer );
@@ -90,7 +92,9 @@ function onWindowResize() {
 function animate() {
   requestAnimationFrame( animate );
   stats.begin();
-  if (controls) controls.update();
+  controls.update();
+  console.log("az angle:", controls.getAzimuthalAngle());
+  console.log("polar angle:", controls.getPolarAngle());
   render();
   stats.end();
 }
