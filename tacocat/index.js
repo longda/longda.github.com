@@ -116,7 +116,7 @@ function init() {
       var p = new THREE.Mesh(g, m);
       p.position.set(THREE.Math.randInt(x_min, x_max), THREE.Math.randInt(y_min, y_max), -THREE.Math.randInt(z_min, z_max));
       scene.add(p);
-      stars.add(p);
+      stars.push(p);
     }
   }
 
@@ -156,7 +156,7 @@ function animate() {
 
 function animateStars() {
   for (var i = 0; i < stars.length; i++) {
-    //stars[i].materials[0].opacity = 
+    //stars[i].materials[0].opacity =
   }
 };
 
