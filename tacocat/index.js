@@ -29,15 +29,15 @@ function init() {
   camera.position.z = 400;
 
   // controls
-  controls = new THREE.OrbitControls( camera );
-  controls.enablePan = false;
-  controls.enableZoom = false;
-  // controls.enableDamping = true;
-  // controls.dampingFactor = 100000;
-  controls.maxAzimuthAngle = 0.01;
-  controls.maxPolarAngle = 0.01;
-  controls.minAzimuthAngle = -0.01;
-  controls.minPolarAngle = -0.01;
+  // controls = new THREE.OrbitControls( camera );
+  // controls.enablePan = false;
+  // controls.enableZoom = false;
+  // // controls.enableDamping = true;
+  // // controls.dampingFactor = 100000;
+  // controls.maxAzimuthAngle = 0.01;
+  // controls.maxPolarAngle = 0.01;
+  // controls.minAzimuthAngle = -0.01;
+  // controls.minPolarAngle = -0.01;
 
 
   // scenes
