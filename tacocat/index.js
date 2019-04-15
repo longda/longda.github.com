@@ -35,9 +35,9 @@ function init() {
   controls.enableDamping = true;
   controls.dampingFactor = 0.25;
   controls.maxAzimuthAngle = 0.05;
-  controls.maxPolarAngle = 1.57 + 0.17;
+  controls.maxPolarAngle = 1.57 + 0.05;
   controls.minAzimuthAngle = -0.05;
-  controls.minPolarAngle = 1.4;
+  controls.minPolarAngle = 1.57 - 0.05;
   controls.rotateSpeed = 0.01;
 
 
