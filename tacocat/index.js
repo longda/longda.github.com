@@ -33,11 +33,11 @@ function init() {
   controls.enablePan = false;
   controls.enableZoom = false;
   controls.enableDamping = true;
-  controls.dampingFactor = 0.0004;
-  controls.maxAzimuthAngle = Math.PI / 10;
-  controls.maxPolarAngle = Math.PI / 10;
-  controls.minAzimuthAngle = -Math.PI / 10;
-  controls.minPolarAngle = -Math.PI / 10;
+  controls.dampingFactor = 0.000001;
+  // controls.maxAzimuthAngle = Math.PI / 10;
+  // controls.maxPolarAngle = Math.PI / 10;
+  // controls.minAzimuthAngle = -Math.PI / 10;
+  // controls.minPolarAngle = -Math.PI / 10;
 
 
   // scenes
