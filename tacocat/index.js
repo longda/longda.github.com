@@ -178,6 +178,8 @@ function render() {
   camera.position.x += ( mouseX - camera.position.x ) * 0.01;
 	camera.position.y += ( - mouseY - camera.position.y ) * 0.01;
 
+  camera.position.x = THREE.Math.clamp(camera.position.x, -200.0, 200.0);
+
   console.log("camera x:", camera.position.x, ", camera y: ", camera.position.y);
 
 	camera.lookAt( scene.position );
