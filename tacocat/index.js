@@ -181,9 +181,21 @@ function render() {
   composer.render(delta);
 }
 
+// disable scroll
+var active = false; //is the mouse over the div
+var scrollPosition = 0;
+container.onmouseenter = function(e) {
+    active = true;
+    scrollPosition = document.documentElement.scrollTop;
+};
+
+container.onmouseleave = function(e) {
+    active = false;
+};
+
 window.onscroll = function(e)
 {
     if (active) {
-        window.scrollTo(0,scrollPosition);
+        window.scrollTo(0, scrollPosition);
     }
 };
