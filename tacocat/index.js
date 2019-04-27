@@ -12,7 +12,9 @@ var height = window.innerHeight || 2;
 var halfWidth = width / 2;
 var halfHeight = height / 2;
 var delta = 0.01;
+
 var controls;
+var mouseX = 0, mouseY = 0;
 
 var stars = [];
 
@@ -31,16 +33,16 @@ function init() {
   camera.position.z = 400;
 
   // controls
-  controls = new THREE.OrbitControls( camera );
-  controls.enablePan = false;
-  controls.enableZoom = false;
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.25;
-  controls.maxAzimuthAngle = 0.05;
-  controls.maxPolarAngle = 1.57 + 0.05;
-  controls.minAzimuthAngle = -0.05;
-  controls.minPolarAngle = 1.57 - 0.05;
-  controls.rotateSpeed = 0.01;
+  // controls = new THREE.OrbitControls( camera );
+  // controls.enablePan = false;
+  // controls.enableZoom = false;
+  // controls.enableDamping = true;
+  // controls.dampingFactor = 0.25;
+  // controls.maxAzimuthAngle = 0.05;
+  // controls.maxPolarAngle = 1.57 + 0.05;
+  // controls.minAzimuthAngle = -0.05;
+  // controls.minPolarAngle = 1.57 - 0.05;
+  // controls.rotateSpeed = 0.01;
 
 
   // scenes
@@ -64,7 +66,7 @@ function init() {
   quadBG.position.z = - 500;
   quadBG.scale.set( width, height, 1 );
   scene.add( quadBG );
-  controls.target = quadBG.position;
+  //controls.target = quadBG.position;
 
   // text
   var loader = new THREE.FontLoader();
@@ -135,20 +137,31 @@ function init() {
   stats = new Stats();
   document.body.appendChild( stats.dom );
 
+  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
   window.addEventListener( 'resize', onWindowResize, false );
 }
 
 function onWindowResize() {
+  width = window.innerWidth || 2;
+  height = window.innerHeight || 2;
+  halfWidth = width / 2;
+  halfHeight = height / 2;
+
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize( window.innerWidth, window.innerHeight );
   composer.setSize( window.innerWidth, window.innerHeight );
 }
 
+function onDocumentMouseMove( event ) {
+  mouseX = ( event.clientX - windowHalfX );
+  mouseY = ( event.clientY - windowHalfY );
+}
+
 function animate() {
   requestAnimationFrame( animate );
   stats.begin();
-  controls.update();
+  //controls.update();
   animateStars();
   render();
   stats.end();
@@ -161,5 +174,9 @@ function animateStars() {
 };
 
 function render() {
+  camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+	camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+	camera.lookAt( scene.position );
+
   composer.render(delta);
 }
