@@ -30,7 +30,7 @@ function init() {
 
   // cameras
   camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, 1, 10000 );
-  camera.position.z = 400;
+  camera.position.z = 1800;
 
   // controls
   // controls = new THREE.OrbitControls( camera );
