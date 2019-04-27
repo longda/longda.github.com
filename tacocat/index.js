@@ -154,8 +154,8 @@ function onWindowResize() {
 }
 
 function onDocumentMouseMove( event ) {
-  mouseX = ( event.clientX - windowHalfX );
-  mouseY = ( event.clientY - windowHalfY );
+  mouseX = ( event.clientX - halfWidth );
+  mouseY = ( event.clientY - halfHeight );
 }
 
 function animate() {
