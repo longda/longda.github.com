@@ -29,7 +29,7 @@ function init() {
   document.body.appendChild( renderer.domElement );
 
   // cameras
-  camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
+  camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, 1, 10000 );
   camera.position.z = 400;
 
   // controls
