@@ -196,8 +196,8 @@ function animateStars() {
 };
 
 function render() {
-  camera.position.x += ( mouseX - camera.position.x ) * 0.05;
-	camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+  camera.position.x += ( mouseX - camera.position.x ) * 0.01;
+	camera.position.y += ( - mouseY - camera.position.y ) * 0.01;
 	camera.lookAt( scene.position );
 
   composer.render(delta);
