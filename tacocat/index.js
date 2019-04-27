@@ -180,3 +180,10 @@ function render() {
 
   composer.render(delta);
 }
+
+window.onscroll = function(e)
+{
+    if (active) {
+        window.scrollTo(0,scrollPosition);
+    }
+};
