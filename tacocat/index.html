@@ -5,12 +5,29 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
-      body { margin: 0; }
+      body {
+				color: #808080;
+				font-family: Monospace;
+				font-size: 13px;
+				text-align: center;
+				background-color: #fff;
+				margin: 0px;
+				overflow: hidden;
+			}
+
 			canvas { width: 100%; height: 100% }
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				padding: 5px;
+			}
+
 		</style>
 	</head>
 	<body>
     <div id="container"></div>
+		<div id="info"><a href="mailto:meow@tacocat.me">contact</a></div>
 		<script src="js/three.min.js"></script>
 
     <script src="js/controls/OrbitControls.js"></script>
