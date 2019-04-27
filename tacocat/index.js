@@ -134,6 +134,9 @@ function init() {
   var effectFilm = new THREE.FilmPass( 0.35, 0.5, 2048, false );
   composer.addPass(effectFilm);
 
+  var glitchPass = new THREE.GlitchPass();
+	composer.addPass(glitchPass);
+
   // stats
   stats = new Stats();
   document.body.appendChild( stats.dom );
