@@ -23,25 +23,33 @@ animate();
 
 function init() {
   // disable scroll
-  container = document.getElementById('container');
-  var active = false; //is the mouse over the div
-  var scrollPosition = 0;
+  // container = document.getElementById('container');
+  // var active = false; //is the mouse over the div
+  // var scrollPosition = 0;
+  //
+  // container.onmouseenter = function(e) {
+  //     active = true;
+  //     scrollPosition = document.documentElement.scrollTop;
+  // };
+  //
+  // container.onmouseleave = function(e) {
+  //     active = false;
+  // };
+  //
+  // window.onscroll = function(e)
+  // {
+  //     if (active) {
+  //         window.scrollTo(0, scrollPosition);
+  //     }
+  // };
 
-  container.onmouseenter = function(e) {
-      active = true;
-      scrollPosition = document.documentElement.scrollTop;
-  };
-
-  container.onmouseleave = function(e) {
-      active = false;
-  };
-
-  window.onscroll = function(e)
-  {
-      if (active) {
-          window.scrollTo(0, scrollPosition);
+  // Disable overscroll 
+  document.body.addEventListener('touchmove',function(e){
+      if(!$(e.target).hasClass("scrollable")) {
+        e.preventDefault();
       }
-  };
+  });
+
 
 
   // renderers
