@@ -22,35 +22,6 @@ init();
 animate();
 
 function init() {
-  // disable scroll
-  // container = document.getElementById('container');
-  // var active = false; //is the mouse over the div
-  // var scrollPosition = 0;
-  //
-  // container.onmouseenter = function(e) {
-  //     active = true;
-  //     scrollPosition = document.documentElement.scrollTop;
-  // };
-  //
-  // container.onmouseleave = function(e) {
-  //     active = false;
-  // };
-  //
-  // window.onscroll = function(e)
-  // {
-  //     if (active) {
-  //         window.scrollTo(0, scrollPosition);
-  //     }
-  // };
-
-  // Disable overscroll 
-  document.body.addEventListener('touchmove',function(e){
-      if(!$(e.target).hasClass("scrollable")) {
-        e.preventDefault();
-      }
-  });
-
-
 
   // renderers
   renderer = new THREE.WebGLRenderer();
@@ -131,8 +102,8 @@ function init() {
 
   // stars
   if (true) {
-    var x_min = -1000;
-    var x_max = 1000;
+    var x_min = -1200;
+    var x_max = 1200;
     var y_min = -800;
     var y_max = 800;
     var z_min = 550;
@@ -206,6 +177,9 @@ function animateStars() {
 function render() {
   camera.position.x += ( mouseX - camera.position.x ) * 0.01;
 	camera.position.y += ( - mouseY - camera.position.y ) * 0.01;
+
+  console.log("camera x:", camera.position.x, ", camera y: ", camera.position.y);
+
 	camera.lookAt( scene.position );
 
   composer.render(delta);
