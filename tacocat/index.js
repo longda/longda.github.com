@@ -79,6 +79,7 @@ function init() {
   mc.transparent = true;
 
   q1 = new THREE.Mesh( new THREE.PlaneBufferGeometry( 1, 1 ), mc );
+  q1.position.x = 100;
   q1.position.z = - 500;
   q1.scale.set( width / 2, height / 2, 1 );
   scene.add( q1 );
@@ -94,7 +95,7 @@ function init() {
   q2 = new THREE.Mesh( new THREE.PlaneBufferGeometry( 1, 1 ), mc2 );
   q2.position.y = - 100;
   q2.position.z = - 250;
-  q2.scale.set( width, height, 1 );
+  q2.scale.set( width / 2, height / 2, 1 );
   scene.add( q2 );
 
 
