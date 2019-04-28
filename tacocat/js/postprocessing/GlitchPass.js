@@ -52,16 +52,18 @@ THREE.GlitchPass.prototype = Object.assign( Object.create( THREE.Pass.prototype 
 			this.curF = 0;
 			this.generateTrigger();
 
-		} else if ( this.curF % this.randX < this.randX / 5 ) {
-
-			this.uniforms[ 'amount' ].value = Math.random() / 90;
-			this.uniforms[ 'angle' ].value = THREE.Math.randFloat( - Math.PI, Math.PI );
-			this.uniforms[ 'distortion_x' ].value = THREE.Math.randFloat( 0, 1 );
-			this.uniforms[ 'distortion_y' ].value = THREE.Math.randFloat( 0, 1 );
-			this.uniforms[ 'seed_x' ].value = THREE.Math.randFloat( - 0.3, 0.3 );
-			this.uniforms[ 'seed_y' ].value = THREE.Math.randFloat( - 0.3, 0.3 );
-
-		} else if ( this.goWild == false ) {
+		}
+		// else if ( this.curF % this.randX < this.randX / 5 ) {
+		//
+		// 	this.uniforms[ 'amount' ].value = Math.random() / 90;
+		// 	this.uniforms[ 'angle' ].value = THREE.Math.randFloat( - Math.PI, Math.PI );
+		// 	this.uniforms[ 'distortion_x' ].value = THREE.Math.randFloat( 0, 1 );
+		// 	this.uniforms[ 'distortion_y' ].value = THREE.Math.randFloat( 0, 1 );
+		// 	this.uniforms[ 'seed_x' ].value = THREE.Math.randFloat( - 0.3, 0.3 );
+		// 	this.uniforms[ 'seed_y' ].value = THREE.Math.randFloat( - 0.3, 0.3 );
+		//
+		// }
+		else if ( this.goWild == false ) {
 
 			this.uniforms[ 'byp' ].value = 1;
 
@@ -86,7 +88,7 @@ THREE.GlitchPass.prototype = Object.assign( Object.create( THREE.Pass.prototype 
 
 	generateTrigger: function () {
 
-		this.randX = THREE.Math.randInt( 1200, 2400 );
+		this.randX = THREE.Math.randInt( 120, 240 );
 
 	},
 
