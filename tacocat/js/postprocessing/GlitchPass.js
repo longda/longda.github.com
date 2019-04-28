@@ -53,6 +53,7 @@ THREE.GlitchPass.prototype = Object.assign( Object.create( THREE.Pass.prototype 
 			this.generateTrigger();
 
 		}
+		//else if ( this.curF % this.randX < this.randX / 5 ) {
 		else if ( this.curF % this.randX < this.randX / 50 ) {
 
 			this.uniforms[ 'amount' ].value = Math.random() / 90;
@@ -90,7 +91,7 @@ THREE.GlitchPass.prototype = Object.assign( Object.create( THREE.Pass.prototype 
 
 		//this.randX = THREE.Math.randInt( 120, 240 );
 		this.randX = THREE.Math.randInt( 1200, 2400 );
-		console.log("randx:", this.randX);
+		//console.log("randx:", this.randX);
 	},
 
 	generateHeightmap: function ( dt_size ) {
