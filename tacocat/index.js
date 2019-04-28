@@ -57,7 +57,8 @@ function init() {
 
   // image
   var materialColor = new THREE.MeshBasicMaterial( {
-      map: new THREE.TextureLoader().load( "nyan-cat.png" ),
+      //map: new THREE.TextureLoader().load( "nyan-cat.png" ),
+      map: new THREE.TextureLoader().load( "tacocat.png" ),
       depthTest: false
     } );
 
