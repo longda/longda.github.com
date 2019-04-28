@@ -55,20 +55,48 @@ function init() {
   light.position.set( 1, 1, 1 );
   scene.add( light );
 
-  // image
-  var materialColor = new THREE.MeshBasicMaterial( {
-      //map: new THREE.TextureLoader().load( "nyan-cat.png" ),
-      map: new THREE.TextureLoader().load( "tacocat.png" ),
+  // images
+  // var materialColor = new THREE.MeshBasicMaterial( {
+  //     //map: new THREE.TextureLoader().load( "nyan-cat.png" ),
+  //     map: new THREE.TextureLoader().load( "tacocat.png" ),
+  //     depthTest: false
+  //   } );
+  //
+  // materialColor.transparent = true;
+  //
+  // quadBG = new THREE.Mesh( new THREE.PlaneBufferGeometry( 1, 1 ), materialColor );
+  // quadBG.position.z = - 500;
+  // quadBG.scale.set( width, height, 1 );
+  // scene.add( quadBG );
+  //controls.target = quadBG.position;
+
+  var mc = new THREE.MeshBasicMaterial( {
+      map: new THREE.TextureLoader().load( "tacocat-logo.png" ),
       depthTest: false
     } );
 
-  materialColor.transparent = true;
+  mc.transparent = true;
 
-  quadBG = new THREE.Mesh( new THREE.PlaneBufferGeometry( 1, 1 ), materialColor );
-  quadBG.position.z = - 500;
-  quadBG.scale.set( width, height, 1 );
-  scene.add( quadBG );
-  //controls.target = quadBG.position;
+  q1 = new THREE.Mesh( new THREE.PlaneBufferGeometry( 1, 1 ), mc );
+  q1.position.z = - 500;
+  q1.scale.set( width, height, 1 );
+  scene.add( q1 );
+
+
+  var mc2 = new THREE.MeshBasicMaterial( {
+      map: new THREE.TextureLoader().load( "tacocat-text.png" ),
+      depthTest: false
+    } );
+
+  mc2.transparent = true;
+
+  q2 = new THREE.Mesh( new THREE.PlaneBufferGeometry( 1, 1 ), mc2 );
+  q2.position.y = - 100;
+  q2.position.z = - 150;
+  q2.scale.set( width, height, 1 );
+  scene.add( q2 );
+
+
 
   // text
   // var loader = new THREE.FontLoader();
