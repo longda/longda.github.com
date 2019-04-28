@@ -131,6 +131,10 @@ function init() {
   // var effectBloom = new THREE.BloomPass( 0.5 );
   // composer.addPass(effectBloom);
 
+  var colorify = new THREE.ShaderPass(THREE.ColorifyShader);
+  colorify.uniforms['color'] = new THREE.Uniform(new THREE.Color(0.2, 0.8, 0.2));
+  composer.addPass(colorify);
+
   var effectFilm = new THREE.FilmPass( 0.35, 0.5, 2048, false );
   composer.addPass(effectFilm);
 
