@@ -168,8 +168,8 @@ function init() {
 	composer.addPass(glitchPass);
 
   // stats
-  stats = new Stats();
-  document.body.appendChild( stats.dom );
+  // stats = new Stats();
+  // document.body.appendChild( stats.dom );
 
   document.addEventListener( 'mousemove', onDocumentMouseMove, false );
   window.addEventListener( 'resize', onWindowResize, false );
@@ -194,11 +194,11 @@ function onDocumentMouseMove( event ) {
 
 function animate() {
   requestAnimationFrame( animate );
-  stats.begin();
+  // stats.begin();
   //controls.update();
   animateStars();
   render();
-  stats.end();
+  // stats.end();
 }
 
 function animateStars() {
