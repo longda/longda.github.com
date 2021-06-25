@@ -77,11 +77,11 @@ layout: dcc
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(0xdfdad0);
+    renderer.setClearColor(0xffffff);
     document.getElementById("webgl").appendChild(renderer.domElement);
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
-    camera.position.z = 5; //3
+    const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
+    camera.position.z = 5;
     scene.add(camera);
 
     const light = new THREE.PointLight(0xffffff);
@@ -107,14 +107,14 @@ layout: dcc
         return Math.random() * (max - min) + min;
       }
 
-      const geometry = new THREE.IcosahedronGeometry(rand(0.2, 1), 0);
+      const geometry = new THREE.DodecahedronGeometry(rand(0.2, 1), 0);
       const material = new THREE.MeshPhongMaterial({
-        color: 0xfe550d,
+        color: 0xdfdad0,
         shading: THREE.FlatShading,
         shininess: 0,
       });
       const wireframeMat = new THREE.MeshBasicMaterial({
-        color: 0x000000,
+        color: 0xfe550d,
         shading: THREE.FlatShading,
         wireframe: true,
         transparent: true,
@@ -152,7 +152,7 @@ layout: dcc
       s.zPos += s.zRate;
     }
     
-    const shapes = []
+    const shapes = [];
     for (let i = 0; i < 5; i++) 
     {
       const s = createShape();
