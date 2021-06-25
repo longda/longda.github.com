@@ -69,52 +69,107 @@ layout: dcc
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
   <script>
-    const sizes = {
+    const sizes = 
+    {
         width: window.innerWidth,
         height: window.innerHeight
     }
-    // const canvas = document.querySelector('canvas.webgl')
-    // const renderer = new THREE.WebGLRenderer({
-    //     canvas: canvas
-    // })
-    const renderer = new THREE.WebGLRenderer()
-    renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-    renderer.setClearColor(0xdfdad0)
-    document.getElementById("webgl").appendChild(renderer.domElement)
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-    camera.position.z = 3
-    scene.add(camera)
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(sizes.width, sizes.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0xdfdad0);
+    document.getElementById("webgl").appendChild(renderer.domElement);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
+    camera.position.z = 5; //3
+    scene.add(camera);
+
+    const light = new THREE.PointLight(0xffffff);
+    light.position.set(10, 0, 5);
+    scene.add(light);
 
     window.addEventListener('resize', () =>
     {
-        // Update sizes
-        sizes.width = window.innerWidth
-        sizes.height = window.innerHeight
+        sizes.width = window.innerWidth;
+        sizes.height = window.innerHeight;
 
-        // Update camera
-        camera.aspect = sizes.width / sizes.height
-        camera.updateProjectionMatrix()
+        camera.aspect = sizes.width / sizes.height;
+        camera.updateProjectionMatrix();
 
-        // Update renderer
-        renderer.setSize(sizes.width, sizes.height)
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+        renderer.setSize(sizes.width, sizes.height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     })
 
-    const clock = new THREE.Clock()
-
-    const tick = () =>
+    const createShape = () => 
     {
-        const elapsedTime = clock.getElapsedTime()
+      const rand = (min, max) => 
+      {
+        return Math.random() * (max - min) + min;
+      }
 
-        // Render
-        renderer.render(scene, camera)
+      const geometry = new THREE.IcosahedronGeometry(rand(0.2, 1), 0);
+      const material = new THREE.MeshPhongMaterial({
+        color: 0xfe550d,
+        shading: THREE.FlatShading,
+        shininess: 0,
+      });
+      const wireframeMat = new THREE.MeshBasicMaterial({
+        color: 0x000000,
+        shading: THREE.FlatShading,
+        wireframe: true,
+        transparent: true,
+      });
 
-        // Call tick again on the next frame
-        window.requestAnimationFrame(tick)
+      const shape = new THREE.SceneUtils.createMultiMaterialObject(geometry, [
+        material,
+        wireframeMat,
+      ]);
+
+      return {
+        shape,
+        xPos: rand(0, 1),
+        yPos: rand(0, 1),
+        zPos: rand(0, 1),
+        xRate: rand(-0.01, 0.01),
+        yRate: rand(-0.01, 0.01),
+        zRate: rand(-0.005, 0.005),
+        xRadius: rand(-2, 2),
+        yRadius: rand(-3, 3),
+        zRadius: rand(-3, 3),
+      };
     }
 
-    tick()
+    const updateShape = (s) => 
+    {
+      const { shape } = s;
+      s.shape.rotation.x += 0.01;
+      s.shape.rotation.y += 0.01;
+      s.shape.position.x = s.xRadius * Math.cos(s.xPos);
+      s.shape.position.y = s.yRadius * Math.cos(s.yPos);
+      s.shape.position.z = s.zRadius * Math.cos(s.zPos);
+      s.xPos += s.xRate;
+      s.yPos += s.yRate;
+      s.zPos += s.zRate;
+    }
+    
+    const shapes = []
+    for (let i = 0; i < 5; i++) 
+    {
+      const s = createShape();
+      s.zRadius = i * 2;
+      shapes.push(s);
+      scene.add(s.shape);
+    }
+
+    const clock = new THREE.Clock();
+    const tick = () =>
+    {
+        const elapsedTime = clock.getElapsedTime();
+        shapes.forEach(updateShape);
+        renderer.render(scene, camera);
+        window.requestAnimationFrame(tick);
+    }
+
+    tick();
   </script>
 </main>
