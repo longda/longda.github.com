@@ -131,8 +131,8 @@ layout: dcc
         xPos: rand(0.2, 1.2),
         yPos: rand(0.2, 1.2),
         zPos: rand(0.1, 1.1),
-        xRate: rand(-0.001, 0.001),
-        yRate: rand(-0.001, 0.001),
+        xRate: rand(-0.005, 0.005),
+        yRate: rand(-0.005, 0.005),
         zRate: rand(-0.0025, 0.0025),
         xRadius: rand(-2, 2),
         yRadius: rand(-3, 3),
@@ -154,7 +154,7 @@ layout: dcc
     }
     
     const shapes = [];
-    for (let i = 0; i < 5; i++) 
+    for (let i = 0; i < 7; i++) 
     {
       const s = createShape();
       s.zRadius = i * 2;
