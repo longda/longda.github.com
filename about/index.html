@@ -109,12 +109,12 @@ layout: dcc
 
       const geometry = new THREE.IcosahedronGeometry(rand(0.2, 1), 0);
       const material = new THREE.MeshPhongMaterial({
-        color: 0xdfdad0,
+        color: 0xfe550d,
+        // color: 0xdfdad0,
         shading: THREE.FlatShading,
         shininess: 0,
       });
       const wireframeMat = new THREE.MeshBasicMaterial({
-        // color: 0xfe550d,
         color: 0x000000,
         shading: THREE.FlatShading,
         wireframe: true,
@@ -143,8 +143,8 @@ layout: dcc
     const updateShape = (s) => 
     {
       const { shape } = s;
-      s.shape.rotation.x += 0.01;
-      s.shape.rotation.y += 0.01;
+      s.shape.rotation.x += 0.001;
+      s.shape.rotation.y += 0.001;
       s.shape.position.x = s.xRadius * Math.cos(s.xPos);
       s.shape.position.y = s.yRadius * Math.cos(s.yPos);
       s.shape.position.z = s.zRadius * Math.cos(s.zPos);
