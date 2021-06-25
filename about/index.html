@@ -90,8 +90,11 @@ layout: dcc
 
     window.addEventListener('resize', () =>
     {
-        sizes.width = window.innerWidth;
-        sizes.height = window.innerHeight;
+        // sizes.width = window.innerWidth;
+        // sizes.height = window.innerHeight;
+
+        sizes.width = (document.height !== undefined) ? document.height : document.body.offsetHeight;
+        sizes.height = (document.width !== undefined) ? document.width : document.body.offsetWidth;
 
         camera.aspect = sizes.width / sizes.height;
         camera.updateProjectionMatrix();
