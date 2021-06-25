@@ -128,12 +128,12 @@ layout: dcc
 
       return {
         shape,
-        xPos: rand(0, 1),
-        yPos: rand(0, 1),
-        zPos: rand(0, 1),
-        xRate: rand(-0.01, 0.01),
-        yRate: rand(-0.01, 0.01),
-        zRate: rand(-0.005, 0.005),
+        xPos: rand(0.2, 1.2),
+        yPos: rand(0.2, 1.2),
+        zPos: rand(0.1, 1.1),
+        xRate: rand(-0.001, 0.001),
+        yRate: rand(-0.001, 0.001),
+        zRate: rand(-0.0025, 0.0025),
         xRadius: rand(-2, 2),
         yRadius: rand(-3, 3),
         zRadius: rand(-3, 3),
@@ -143,11 +143,8 @@ layout: dcc
     const updateShape = (s) => 
     {
       const { shape } = s;
-      s.shape.rotation.x += 0.001;
-      s.shape.rotation.y += 0.001;
-      // s.shape.position.x = s.xRadius * Math.cos(s.xPos);
-      // s.shape.position.y = s.yRadius * Math.cos(s.yPos);
-      // s.shape.position.z = s.zRadius * Math.cos(s.zPos);
+      s.shape.rotation.x += 0.005;
+      s.shape.rotation.y += 0.005;
       s.shape.position.x = s.xRadius * Math.sin(s.xPos);
       s.shape.position.y = s.yRadius * Math.sin(s.yPos);
       s.shape.position.z = s.zRadius * Math.sin(s.zPos);
