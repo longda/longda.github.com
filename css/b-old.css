@@ -674,7 +674,7 @@ a, .tl, .tl:link, .tl:visited, .tl:hover, .tl:active, .tl:focus {
 
 a:hover {
   background: #FFE9EC;
-  color: #fe550d; }
+  color: #FE57A1; }
 
 /*a.dk-bg {
   background: none;
@@ -714,12 +714,12 @@ hr.fat {
   height: 5px; }
 
 ::-moz-selection {
-  background: #fe550d;
+  background: #FE57A1;
   color: #FFFFFF;
   text-shadow: none; }
 
 ::selection {
-  background: #fe550d;
+  background: #FE57A1;
   color: #FFFFFF;
   text-shadow: none; }
 
@@ -739,7 +739,7 @@ hr.fat {
   height: 100%; }
 
 .heart {
-  color: #fe550d; }
+  color: #F92672; }
 
 .star {
   color: #FFCC00; }
