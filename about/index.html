@@ -72,7 +72,7 @@ layout: dcc
     const sizes = 
     {
         width: window.innerWidth,
-        height: window.innerHeight
+        height: document.documentElement.scrollHeight
     }
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(sizes.width, sizes.height);
@@ -90,11 +90,14 @@ layout: dcc
 
     window.addEventListener('resize', () =>
     {
+        sizes.width = window.innerWidth;
+        sizes.height = document.documentElement.scrollHeight;
+      
         // sizes.width = window.innerWidth;
         // sizes.height = window.innerHeight;
 
-        sizes.width = (document.height !== undefined) ? document.height : document.body.offsetHeight;
-        sizes.height = (document.width !== undefined) ? document.width : document.body.offsetWidth;
+        // sizes.width = (document.height !== undefined) ? document.height : document.body.offsetHeight;
+        // sizes.height = (document.width !== undefined) ? document.width : document.body.offsetWidth;
 
         camera.aspect = sizes.width / sizes.height;
         camera.updateProjectionMatrix();
