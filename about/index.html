@@ -113,7 +113,8 @@ layout: dcc
         return Math.random() * (max - min) + min;
       }
 
-      const geometry = new THREE.IcosahedronGeometry(rand(0.2, 1), 0);
+      //const geometry = new THREE.IcosahedronGeometry(rand(0.2, 1), 0);
+      const geometry = new THREE.IcosahedronGeometry(rand(0.2, 100), 1);
       const material = new THREE.MeshPhongMaterial({
         color: 0xfe550d,
         // color: 0xdfdad0,
