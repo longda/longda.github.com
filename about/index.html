@@ -14,16 +14,11 @@ layout: dcc
     height: 0;
   }
   #webgl {
-      /* position: fixed; */
       position: absolute;
       top: 0;
       left: 0;
       outline: none;
   }
-  /* canvas {
-    width: 100%;
-    height: 100%;
-  } */
   #container {
     position: relative;
   }
@@ -93,12 +88,6 @@ layout: dcc
         sizes.width = window.innerWidth;
         sizes.height = document.documentElement.scrollHeight;
       
-        // sizes.width = window.innerWidth;
-        // sizes.height = window.innerHeight;
-
-        // sizes.width = (document.height !== undefined) ? document.height : document.body.offsetHeight;
-        // sizes.height = (document.width !== undefined) ? document.width : document.body.offsetWidth;
-
         camera.aspect = sizes.width / sizes.height;
         camera.updateProjectionMatrix();
 
