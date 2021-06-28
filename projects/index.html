@@ -134,6 +134,7 @@ layout: dcc
         return Math.random() * (max - min) + min;
       }
 
+      const geometry = new THREE.SphereGeometry(1, 32, 32);
       const material = new THREE.PointsMaterial( { color: 0x888888 } );
       const points = new THREE.Points( geometry, material );
       scene.add( points );
@@ -174,7 +175,7 @@ layout: dcc
 
     const updateShape = (s) => 
     {
-      // const { shape } = s;
+      const { shape } = s;
       // s.shape.rotation.x += 0.005;
       // s.shape.rotation.y += 0.005;
       // s.shape.position.x = s.xRadius * Math.sin(s.xPos);
