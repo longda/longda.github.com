@@ -135,7 +135,7 @@ layout: dcc
       }
 
       const geometry = new THREE.SphereGeometry(1, 32, 32);
-      const material = new THREE.MeshBasicMaterial({ color: 0x888888, wireframe: true })
+      const material = new THREE.MeshBasicMaterial({ color: 0x888888, wireframe: true });
       // const material = new THREE.PointsMaterial( { color: 0x888888 } );
       const shape = new THREE.Points( geometry, material );
       //scene.add( points );
@@ -177,18 +177,18 @@ layout: dcc
     const updateShape = (s) => 
     {
       const { shape } = s;
-      // s.shape.rotation.x += 0.005;
-      // s.shape.rotation.y += 0.005;
-      // s.shape.position.x = s.xRadius * Math.sin(s.xPos);
-      // s.shape.position.y = s.yRadius * Math.sin(s.yPos);
-      // s.shape.position.z = s.zRadius * Math.sin(s.zPos);
-      // s.xPos += s.xRate;
-      // s.yPos += s.yRate;
-      // s.zPos += s.zRate;
+      s.shape.rotation.x += 0.005;
+      s.shape.rotation.y += 0.005;
+      s.shape.position.x = s.xRadius * Math.sin(s.xPos);
+      s.shape.position.y = s.yRadius * Math.sin(s.yPos);
+      s.shape.position.z = s.zRadius * Math.sin(s.zPos);
+      s.xPos += s.xRate;
+      s.yPos += s.yRate;
+      s.zPos += s.zRate;
     }
     
     const shapes = [];
-    for (let i = 0; i < 1; i++) 
+    for (let i = 0; i < 2; i++) 
     {
       const s = createShape();
       //s.zRadius = i * 2;
