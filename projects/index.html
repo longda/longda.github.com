@@ -155,11 +155,15 @@ layout: dcc
         transparent: true,
       });
 
-      const shape = new THREE.SceneUtils.createMultiMaterialObject(geometry, [
-        material,
-        wireframeMat,
-      ]);
-      //const shape = new THREE.Points( geometry, material );
+      // const shape = new THREE.SceneUtils.createMultiMaterialObject(geometry, [
+      //   material,
+      //   wireframeMat,
+      // ]);
+      // const shape = new THREE.Points( geometry, material );
+      const shape = new THREE.Points( geometry, new THREE.PointsMaterial({
+                color: 0x00afaf,
+                size: 0.025
+            }) );
 
       return {
         shape,
