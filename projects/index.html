@@ -148,12 +148,12 @@ layout: dcc
         shading: THREE.FlatShading,
         shininess: 0,
       });
-      const wireframeMat = new THREE.MeshBasicMaterial({
-        color: 0x000000,
-        shading: THREE.FlatShading,
-        wireframe: true,
-        transparent: true,
-      });
+      // const wireframeMat = new THREE.MeshBasicMaterial({
+      //   color: 0x000000,
+      //   shading: THREE.FlatShading,
+      //   wireframe: true,
+      //   transparent: true,
+      // });
 
       // const shape = new THREE.SceneUtils.createMultiMaterialObject(geometry, [
       //   material,
@@ -161,7 +161,7 @@ layout: dcc
       // ]);
       // const shape = new THREE.Points( geometry, material );
       const shape = new THREE.Points( geometry, new THREE.PointsMaterial({
-                color: 0x00afaf,
+                color: 0xffffff,
                 size: 0.025
             }) );
 
