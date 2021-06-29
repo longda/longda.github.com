@@ -135,19 +135,19 @@ layout: dcc
       }
 
       const geometry = new THREE.SphereGeometry(1, 32, 32);
-      const material = new THREE.MeshBasicMaterial({ color: 0x888888, wireframe: true });
+      //const material = new THREE.MeshBasicMaterial({ color: 0x888888, wireframe: true });
       // const material = new THREE.PointsMaterial( { color: 0x888888 } );
-      const shape = new THREE.Points( geometry, material );
+      
       //scene.add( points );
 
       // const geometry = new THREE.IcosahedronGeometry(rand(0.2, 1), 0);
       // //const geometry = new THREE.IcosahedronGeometry(rand(0.2, 100), 1);
-      // const material = new THREE.MeshPhongMaterial({
-      //   color: 0xfe550d,
-      //   // color: 0xdfdad0,
-      //   shading: THREE.FlatShading,
-      //   shininess: 0,
-      // });
+      const material = new THREE.MeshPhongMaterial({
+        color: 0xfe550d,
+        // color: 0xdfdad0,
+        shading: THREE.FlatShading,
+        shininess: 0,
+      });
       // const wireframeMat = new THREE.MeshBasicMaterial({
       //   color: 0x000000,
       //   shading: THREE.FlatShading,
@@ -159,6 +159,7 @@ layout: dcc
       //   material,
       //   wireframeMat,
       // ]);
+      const shape = new THREE.Points( geometry, material );
 
       return {
         shape,
