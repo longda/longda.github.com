@@ -18,6 +18,24 @@ body
     outline: none;
 }
 
+#info
+{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 15px;
+    /* color: #808080; */
+    font-family: Monospace;
+    font-size: 13px;
+    text-align: center;
+    z-index: 100;
+}
+
+a, a:link, a:visited, a:hover, a:active, a:focus
+{
+    color:aqua;
+}
+
 
 
 /*# sourceMappingURL=main.css.map*/
