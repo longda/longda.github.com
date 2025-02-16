@@ -1,5 +1,14 @@
 ---
 layout: dcc
+title: "Sample Player Card"
+description: "This is a sample video. When you implement, make sure all links are secure."
+twitter_card: "player"
+twitter_title: "Sample Player Card"
+twitter_description: "This is a sample video. When you implement, make sure all links are secure."
+twitter_image_base: "/x-twitter-cards/samples"
+twitter_image_file: "example.png"
+twitter_player_base: "/x-twitter-cards/samples"
+twitter_player_file: "player.html"
 ---
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -31,12 +40,13 @@ layout: dcc
 </style>
 
 <main id="container">
-  <div id="webgl"></div>
   <div id="about" class="pl-2 pr-2 column pt-6">
     <h1 class="h2">Twitter Card Samples</h1>
     <!-- <h2 class="h3">David Long</h2> -->
 
-    <img src="img/7627.png" alt title="David Long, Software Engineer + Creative Technologist">
+    <p>
+      <iframe src="player.html" width="480" height="480" frameborder="0"></iframe> 
+    </p>
 
     <p>
       Hi!  My name is Dave and I can code!
