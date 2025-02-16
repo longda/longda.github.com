@@ -8,9 +8,9 @@
 #=====================================
 
 # This will be the first part of the title tag for your site
-# <title> {{site.name}} </title>
+# <title> {{site.title}} </title>
 # ============================================================
-name: "I ♥ CODE | David Long | davecancode.com"
+title: "I ♥ CODE | David Long | davecancode.com"
 
 # Populates the meta description for the site. Should be under 150 characters for best SEO results.
 # ============================================================
