@@ -29,7 +29,7 @@ url: "https://davecancode.com"
 future: true
 
 # twitter:image - https://blog.hootsuite.com/social-media-image-sizes-guide/
-image: "https://davecancode.com/about/img/7627.png"
+# image: "https://davecancode.com/about/img/7627.png"
 
 # "A list of directories (including trailing slash) and files to exclude from the conversion"
 # I normally exclude _sass, README*, and .gitignore
