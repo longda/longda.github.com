@@ -29,7 +29,7 @@
     <meta name="twitter:title" content="{{ page.twitter_title | default: site.title }}" />
     <meta name="twitter:description" content="{{ page.twitter_description | default: site.description }}" />
     <meta name="twitter:image" content="{% if page.twitter_image %}{{ page.twitter_image }}{% else %}{{ site.url }}{{ page.twitter_image_base | append: '/' unless page.twitter_image_base == '' or page.twitter_image_base endswith '/' }}{{ page.twitter_image_file | default: 'example.png' }}{% endif %}">
-    <meta name="twitter:player" content="{{ page.twitter_player | default: site.url | append: page.twitter_player_base | append: '/' | append: page.twitter_player_file | default: 'container.html' }}" />
+    <meta name="twitter:player" content="{% if page.twitter_player %}{{ page.twitter_player }}{% else %}{{ site.url }}{{ page.twitter_player_base | append: '/' unless page.twitter_player_base == '' or page.twitter_player_base endswith '/' }}{{ page.twitter_player_file | default: 'player.html' }}{% endif %}">
     <meta name="twitter:player:width" content="{{ page.twitter_player_width | default: '480' }}" />
     <meta name="twitter:player:height" content="{{ page.twitter_player_height | default: '480' }}" />
 </head>
