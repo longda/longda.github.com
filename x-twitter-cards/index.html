@@ -1,5 +1,12 @@
 ---
 layout: dcc
+title: "Sample Twitter/X Card Directory"
+description: "A directory of sample Twitter/X player cards."
+twitter_card: "summary_large_image"
+twitter_title: "Sample Twitter/X Card Directory"
+twitter_description: "A directory of sample Twitter/X player cards."
+twitter_image_base: "/about/img"
+twitter_image_file: "7627.png"
 ---
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -49,6 +56,22 @@ layout: dcc
   <div id="page-content" class="pl-2 pr-2 column pt-6">
     <h1 class="h2">Twitter Cards</h1>
     
+    <p>
+      This is a directory of sample Twitter Cards.
+    </p>
+
+    <p>
+      Each one aims to demonstrate a different concept or experience.
+    </p>
+
+    <p>
+      Some demonstrate what an existing experience could be like if the brand implements the correct meta tags.
+    </p>
+
+    <p>
+      You can analyze these pages or try your own urls using my <a href="https://twitter-cards.davecancode.com/" target="_blank">Twitter Card Validator</a> tool.
+    </p>
+
     <ul>
       {% assign sorted_pages = site.pages | sort: 'title' %}
       {% for page in sorted_pages %}
@@ -57,7 +80,7 @@ layout: dcc
             <h2>{{ page.title }}</h2>
             <p>{{ page.description }}</p>
             <a href="{{ page.url }}">
-              Try it
+              <p>Try it! 👇</p>
               {% if page.twitter_image_base and page.twitter_image_file %}
                 <img src="{{ page.twitter_image_base }}/{{ page.twitter_image_file }}" alt="{{ page.title }}">
               {% endif %}
