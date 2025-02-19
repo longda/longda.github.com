@@ -7,6 +7,20 @@ layout: dcc
   body { 
     font-family: 'Open Sans', sans-serif; 
   }
+  ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+  }
+  li {
+    margin: 10px 0; /* Add some margin for spacing */
+  }
+  li a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+  }
+  li a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
   .videoWrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
@@ -36,7 +50,8 @@ layout: dcc
     <h1 class="h2">Twitter Cards</h1>
     
     <ul>
-      {% for page in site.pages %}
+      {% assign sorted_pages = site.pages | sort: 'title' %}
+      {% for page in sorted_pages %}
         {% if page.path contains 'x-twitter-cards/' and page.path != 'x-twitter-cards/index.html' %}
           <li>
             <a href="{{ page.url }}">
