@@ -12,7 +12,7 @@ layout: dcc
     padding: 0; /* Remove padding */
   }
   li {
-    margin: 10px 0; /* Add some margin for spacing */
+    margin: 100px 0; /* Add some margin for spacing */
   }
   li a {
     text-decoration: none; /* Remove underline from links */
@@ -54,9 +54,10 @@ layout: dcc
       {% for page in sorted_pages %}
         {% if page.path contains 'x-twitter-cards/' and page.path != 'x-twitter-cards/index.html' %}
           <li>
+            <h2>{{ page.title }}</h2>
+            <p>{{ page.description }}</p>
             <a href="{{ page.url }}">
-              <h2>{{ page.title }}</h2>
-              <p>{{ page.description }}</p>
+              Try it
               {% if page.twitter_image_base and page.twitter_image_file %}
                 <img src="{{ page.twitter_image_base }}/{{ page.twitter_image_file }}" alt="{{ page.title }}">
               {% endif %}
