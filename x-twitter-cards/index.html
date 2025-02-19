@@ -22,7 +22,7 @@ layout: dcc
   #container {
     position: relative;
   }
-  #about {
+  #page-content {
     position: inherit;
   }
   footer {
@@ -32,11 +32,26 @@ layout: dcc
 
 <main id="container">
   <div id="webgl"></div>
-  <div id="about" class="pl-2 pr-2 column pt-6">
+  <div id="page-content" class="pl-2 pr-2 column pt-6">
     <h1 class="h2">Twitter Cards</h1>
-    <!-- <h2 class="h3">David Long</h2> -->
+    
+    <ul>
+      {% for page in site.pages %}
+        {% if page.path contains 'x-twitter-cards/' and page.path != 'x-twitter-cards/index.html' %}
+          <li>
+            <a href="{{ page.url }}">
+              <h2>{{ page.title }}</h2>
+              <p>{{ page.description }}</p>
+              {% if page.twitter_image_base and page.twitter_image_file %}
+                <img src="{{ page.twitter_image_base }}/{{ page.twitter_image_file }}" alt="{{ page.title }}">
+              {% endif %}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
 
-    <img src="img/7627.png" alt title="David Long, Software Engineer + Creative Technologist">
+    <!-- <img src="img/7627.png" alt title="David Long, Software Engineer + Creative Technologist">
 
     <p>
       Hi!  My name is Dave and I can code!
@@ -66,7 +81,7 @@ layout: dcc
       <a href="https://rainbow.me/davecancode.eth" target="_blank">Airdrop me</a>
     </p>
 
-    <div class="pb-6 gap"></div>
+    <div class="pb-6 gap"></div> -->
   </div>
   
 
