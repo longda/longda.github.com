@@ -87,8 +87,6 @@ twitter_player: "https://spaces.monaverse.com/spaces/UL7SB1RadYkk"
             <a href="{{ page.url }}">
               <p>Try it! 👇</p>
                 <img src="{% if page.twitter_image %}{{ page.twitter_image }}{% else %}{{ site.url }}{{ page.twitter_image_base | append: '/' unless page.twitter_image_base == '' or page.twitter_image_base endswith '/' }}{{ page.twitter_image_file | default: 'example.png' }}{% endif %}" alt="{{ page.title }}">
-                <!-- <img src="{{ page.twitter_image_base }}/{{ page.twitter_image_file }}" alt="{{ page.title }}"> -->
-              
             </a>
           </li>
         {% endif %}
