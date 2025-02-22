@@ -77,12 +77,24 @@ twitter_player: "https://spaces.monaverse.com/spaces/UL7SB1RadYkk"
       Learn how to make your own interactive experiences with my guide <a href="https://davecancode.gumroad.com/l/unlocking-twitter-player-cards" target="_blank">Unlocking Twitter/X Player Cards</a>.
     </p>
 
+    <h2>Table of Contents</h2>
+    <ul>
+      {% assign sorted_pages = site.pages | sort: 'title' %}
+      {% for page in sorted_pages %}
+        {% if page.path contains 'x-twitter-cards/' and page.path != 'x-twitter-cards/index.html' %}
+          <li><a href="#examples">{{ page.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+      <li><a href="#examples">Examples that just work</a></li>
+      <li><a href="#learn">Learn about Twitter Player Cards</a></li>
+    </ul>
+
     <ul>
       {% assign sorted_pages = site.pages | sort: 'title' %}
       {% for page in sorted_pages %}
         {% if page.path contains 'x-twitter-cards/' and page.path != 'x-twitter-cards/index.html' %}
           <li>
-            <h2>{{ page.title }}</h2>
+            <h2 id="{{ page.title }}">{{ page.title }}</h2>
             <p>{{ page.description }}</p>
             <a href="{{ page.url }}">
               <p>Try it! 👇</p>
@@ -93,7 +105,7 @@ twitter_player: "https://spaces.monaverse.com/spaces/UL7SB1RadYkk"
       {% endfor %}
     </ul>
 
-    <h2>Examples that just work</h2>
+    <h2 id="examples">Examples that just work</h2>
     <p>These are great references.</p>
     <p>They've been set up with care and thought around their meta tags.</p>
 
@@ -104,6 +116,10 @@ twitter_player: "https://spaces.monaverse.com/spaces/UL7SB1RadYkk"
       </li>
     </ul>
 
+    <h2 id="learn">Learn</h2>
+    <p>🔮 Turn your tweets into interactive, media-rich experiences and unlock the full power of Twitter/X Player Cards!</p>
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+    <a class="gumroad-button" href="https://davecancode.gumroad.com/l/unlocking-twitter-player-cards">Buy on</a>
   </div>
   
 
