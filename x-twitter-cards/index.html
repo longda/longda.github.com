@@ -82,7 +82,7 @@ twitter_player: "https://spaces.monaverse.com/spaces/UL7SB1RadYkk"
       {% assign sorted_pages = site.pages | sort: 'title' %}
       {% for page in sorted_pages %}
         {% if page.path contains 'x-twitter-cards/' and page.path != 'x-twitter-cards/index.html' %}
-          <li><a href="#examples">{{ page.title }}</a></li>
+          <li><a href="#{{ page.title | slugify }}">{{ page.title }}</a></li>
         {% endif %}
       {% endfor %}
       <li><a href="#examples">Examples that just work</a></li>
@@ -94,7 +94,7 @@ twitter_player: "https://spaces.monaverse.com/spaces/UL7SB1RadYkk"
       {% for page in sorted_pages %}
         {% if page.path contains 'x-twitter-cards/' and page.path != 'x-twitter-cards/index.html' %}
           <li>
-            <h2 id="{{ page.title }}">{{ page.title }}</h2>
+            <h2 id="{{ page.title | slugify }}">{{ page.title }}</h2>
             <p>{{ page.description }}</p>
             <a href="{{ page.url }}">
               <p>Try it! 👇</p>
