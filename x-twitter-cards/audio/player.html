@@ -4,6 +4,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .bg {
+        /* The image used */
+        background-image: url("audio.jpeg");
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .audio-player {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(255, 255, 255, 0.5); /* Optional: Add a semi-transparent background to the audio player */
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>
 </head>
 
 <body>
@@ -33,10 +63,15 @@
     Your browser does not support the audio element.
   </audio> -->
 
-  <audio controls>
-    <source src="https://davecancode.com/x-twitter-cards/audio/audio.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
+  
+  <div class="bg">
+    <div class="audio-player">
+      <audio controls>
+        <source src="https://davecancode.com/x-twitter-cards/audio/audio.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
   
 
   <!-- <video controls="" autoplay="" name="media">
