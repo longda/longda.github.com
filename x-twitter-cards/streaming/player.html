@@ -4,6 +4,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .bg {
+        /* The image used */
+        background-image: url("video.jpg");
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        /* Ensure the content is visible */
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .video-player {
+        background-color: rgba(255, 255, 255, 0.5); /* Optional: Add a semi-transparent background to the video player */
+        padding: 10px;
+        border-radius: 5px;
+        width: 600px;
+    }
+</style>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 
@@ -21,23 +53,28 @@
 
   gtag('config', 'G-EL2DBT910F');
 </script>
-
+<!-- 
   <style type="text/css">
     video {
       width: 100%;
       max-width: 600px;
       height: auto;
     }
-  </style>
+  </style> -->
 
   <!-- <video controls>
     <source src="https://test-streams.mux.dev/tos_ismc/main.m3u8" type="application/x-mpegURL">
     Your browser does not support video
   </video> -->
 
-  <video id="video" controls>
-    Your browser does not support video
-  </video>
+  <div class="bg">
+    <div class="video-player">
+      <video id="video" controls>
+        Your browser does not support video
+      </video>
+    </div>
+  </div>
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
