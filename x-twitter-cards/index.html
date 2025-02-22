@@ -50,6 +50,11 @@ twitter_player: "https://spaces.monaverse.com/spaces/UL7SB1RadYkk"
   footer {
     position: inherit;
   }
+
+  /* New styles for the first ul */
+  .toc-list li {
+    margin: 5px 0; /* Reduce margin for a more text-like appearance */
+  }
 </style>
 
 <main id="container">
@@ -78,7 +83,7 @@ twitter_player: "https://spaces.monaverse.com/spaces/UL7SB1RadYkk"
     </p>
 
     <h2>Table of Contents</h2>
-    <ul>
+    <ul class="toc-list">
       {% assign sorted_pages = site.pages | sort: 'title' %}
       {% for page in sorted_pages %}
         {% if page.path contains 'x-twitter-cards/' and page.path != 'x-twitter-cards/index.html' %}
