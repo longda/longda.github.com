@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+  <style>
+      body, html {
+          height: 100%;
+          margin: 0;
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: black;  /* Optional: matches your sketch background */
+      }
+      canvas {
+          max-width: 100vmin !important;
+          max-height: 100vmin !important;
+      }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+
+<body>
+<!-- _ANALYTICS -->
+
+<!-- GA -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL2DBT910F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL2DBT910F');
+</script>
+
+  <script>
+    let nodes = [];
+    const gridSize = 20;
+    const spacing = 30;
+    let scale = 1;
+    const baseSize = 480;  // Your target size
+
+    function setup() {
+      // Create a square canvas that scales with the viewport
+      scale = min(windowWidth, windowHeight) / baseSize;
+      createCanvas(baseSize * scale, baseSize * scale);
+      colorMode(HSB, 360, 100, 100, 1.0);
+      background(0);
+      // Create a grid of nodes
+      for (let x = 0; x < gridSize; x++) {
+        for (let y = 0; y < gridSize; y++) {
+          nodes.push(new Node(x * spacing, y * spacing));
+        }
+      }
+    }
+
+    function windowResized() {
+      // Update canvas size when window is resized
+      scale = min(windowWidth, windowHeight) / baseSize;
+      resizeCanvas(baseSize * scale, baseSize * scale);
+    }
+
+    function draw() {
+      background(0, 0.15); // Faint trail for motion
+      translate(width / 2 - (gridSize * spacing) / 2, height / 2 - (gridSize * spacing) / 2); // Center the grid
+
+      // Update and display nodes
+      for (let i = 0; i < nodes.length; i++) {
+        nodes[i].update();
+        nodes[i].display();
+      }
+
+      // Connect nodes with animated lines
+      strokeWeight(1);
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          let d = dist(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+          if (d < 50) { // Only connect nearby nodes
+            let alpha = map(sin(frameCount * 0.1 + i + j), -1, 1, 0.05, 0.3); // Animated opacity
+            stroke(nodes[i].hue, 80, 100, alpha);
+            line(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+          }
+        }
+      }
+    }
+
+    class Node {
+      constructor(x, y) {
+        this.baseX = x; // Base position
+        this.baseY = y;
+        this.x = x;
+        this.y = y;
+        this.hue = random(175, 195); // Tighter range around cyan (180)
+        this.offset = random(1000); // Unique noise offset
+        this.pulse = 0;
+      }
+
+      update() {
+        // Ripple effect using noise
+        let noiseVal = noise(this.baseX * 0.01, this.baseY * 0.01, frameCount * 0.05 + this.offset);
+        let ripple = sin(frameCount * 0.1 + this.offset) * 10; // Pulsing motion
+        this.x = this.baseX + noiseVal * 20 + ripple;
+        this.y = this.baseY + noiseVal * 20 + ripple;
+
+        // Color shifts slightly, staying near cyan
+        this.hue = constrain(this.hue + random(-5, 5), 175, 195); // Tight shifts around cyan
+        this.pulse = map(sin(frameCount * 0.15 + this.offset), -1, 1, 2, 5); // Tiny pulsation
+      }
+
+      display() {
+        noStroke();
+        fill(this.hue, 90, 100, 0.5); // Lower opacity
+        ellipse(this.x, this.y, this.pulse, this.pulse); // Tiny ellipses
+      }
+    }
+  </script>
+
+</body>
+
+</html>
